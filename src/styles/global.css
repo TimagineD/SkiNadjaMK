@@ -1,2005 +1,2022 @@
 @import "tailwindcss";
 
-    /* ==========================================================================
+/* ==========================================================================
        MODERN DESIGN TOKENS & SYSTEM
        Defines CSS custom properties (variables) for consistent colors, elevations,
        typography, and component radii throughout the entire application.
        ========================================================================== */
-    :root {
-      /* Surface & Glassmorphism Colors */
-      --bg-sky: #0a1322;
-      --bg-dark: #070e18;
-      --bg-card: rgba(255, 255, 255, 0.82);
-      --bg-card-dark: rgba(15, 27, 45, 0.75);
-      --bg-glass: rgba(255, 255, 255, 0.65);
-      --border-glass: rgba(255, 255, 255, 0.4);
-      --border-subtle: rgba(14, 143, 230, 0.15);
+:root {
+  /* Surface & Glassmorphism Colors */
+  --bg-sky: #0a1322;
+  --bg-dark: #070e18;
+  --bg-card: rgba(255, 255, 255, 0.82);
+  --bg-card-dark: rgba(15, 27, 45, 0.75);
+  --bg-glass: rgba(255, 255, 255, 0.65);
+  --border-glass: rgba(255, 255, 255, 0.4);
+  --border-subtle: rgba(14, 143, 230, 0.15);
 
-      /* Winter / Alpine Color Palette */
-      --snow-white: #ffffff;
-      --powder-ice: #f0f6fc;
-      --glacier-cyan: #0ea5e9;
-      --glacier-glow: #38bdf8;
-      --alpine-blue: #0284c7;
-      --deep-navy: #091424;
+  /* Winter / Alpine Color Palette */
+  --snow-white: #ffffff;
+  --powder-ice: #f0f6fc;
+  --glacier-cyan: #0ea5e9;
+  --glacier-glow: #38bdf8;
+  --alpine-blue: #0284c7;
+  --deep-navy: #091424;
 
-      /* Vibrant Sun / Warm Action Colors */
-      --sun-orange: #f97316;
-      --sun-amber: #fb923c;
-      --sun-glow: rgba(249, 115, 22, 0.35);
+  /* Vibrant Sun / Warm Action Colors */
+  --sun-orange: #f97316;
+  --sun-amber: #fb923c;
+  --sun-glow: rgba(249, 115, 22, 0.35);
 
-      /* Slate Ink & Typography Contrast Tokens */
-      --ink: #0f172a;
-      --ink-muted: #475569;
-      --ink-light: #94a3b8;
+  /* Slate Ink & Typography Contrast Tokens */
+  --ink: #0f172a;
+  --ink-muted: #475569;
+  --ink-light: #94a3b8;
 
-      /* Social Concierge Channel Brand Colors */
-      --wa-green: #25d366;
-      --viber-purple: #7360f2;
+  /* Social Concierge Channel Brand Colors */
+  --wa-green: #25d366;
+  --viber-purple: #7360f2;
 
-      /* Standard Border Radii Scale */
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 22px;
-      --radius-xl: 32px;
-      --radius-pill: 9999px;
+  /* Standard Border Radii Scale */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 9999px;
 
-      /* Depth & Box Shadows (Layered elevations + vibrant glowing accents) */
-      --shadow-sm: 0 2px 8px rgba(9, 20, 36, 0.06);
-      --shadow-md: 0 10px 30px rgba(9, 20, 36, 0.08);
-      --shadow-lg: 0 20px 50px rgba(9, 20, 36, 0.12);
-      --shadow-glow: 0 0 35px rgba(14, 165, 233, 0.3);
-      --shadow-orange: 0 10px 25px rgba(249, 115, 22, 0.35);
+  /* Depth & Box Shadows (Layered elevations + vibrant glowing accents) */
+  --shadow-sm: 0 2px 8px rgba(9, 20, 36, 0.06);
+  --shadow-md: 0 10px 30px rgba(9, 20, 36, 0.08);
+  --shadow-lg: 0 20px 50px rgba(9, 20, 36, 0.12);
+  --shadow-glow: 0 0 35px rgba(14, 165, 233, 0.3);
+  --shadow-orange: 0 10px 25px rgba(249, 115, 22, 0.35);
 
-      /* Typography Font Families */
-      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  /* Typography Font Families */
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
 
-      /* Global Layout & Smooth Scrolling Behavior */
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+  /* Global Layout & Smooth Scrolling Behavior */
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-    /* Universal Box-Sizing: Ensures padding and borders are factored into element dimensions */
-    *,
-    *::before,
-    *::after {
-      box-sizing: inherit;
-    }
+/* Universal Box-Sizing: Ensures padding and borders are factored into element dimensions */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
 
-    /* Document Root: Sets base background, typography smoothing, and scroll margin for sticky header */
-    html {
-      background: var(--powder-ice);
-      color: var(--ink);
-      font-family: var(--font-body);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      scroll-padding-top: 80px;
-    }
+/* Document Root: Sets base background, typography smoothing, and scroll margin for sticky header */
+html {
+  background: var(--powder-ice);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-padding-top: 80px;
+}
 
-    /* Main Body Element: Strips default margins, prevents horizontal scrolling, and adds ambient light mesh */
-    body {
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-      background-color: #f5f8fc;
-      background-image:
-        radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.12) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.08) 0px, transparent 50%);
-    }
+/* Main Body Element: Strips default margins, prevents horizontal scrolling, and adds ambient light mesh */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: #f5f8fc;
+  background-image:
+    radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.08) 0px, transparent 50%);
+}
 
-    /* Text Selection: Highlights selected text in branded glacier cyan */
-    ::selection {
-      background: var(--glacier-cyan);
-      color: var(--snow-white);
-    }
+/* Text Selection: Highlights selected text in branded glacier cyan */
+::selection {
+  background: var(--glacier-cyan);
+  color: var(--snow-white);
+}
 
-    /* Headings Defaults: Applies geometric display font ('Outfit') and tight letter spacing */
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: var(--font-display);
-      margin: 0;
-      color: var(--deep-navy);
-      letter-spacing: -0.02em;
-    }
+/* Headings Defaults: Applies geometric display font ('Outfit') and tight letter spacing */
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  margin: 0;
+  color: var(--deep-navy);
+  letter-spacing: -0.02em;
+}
 
-    /* Paragraph Reset: Strips default vertical margins for precise spacing */
-    p {
-      margin: 0;
-    }
+/* Paragraph Reset: Strips default vertical margins for precise spacing */
+p {
+  margin: 0;
+}
 
-    /* Anchor Reset: Strips default underlines and inherits text colors */
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+/* Anchor Reset: Strips default underlines and inherits text colors */
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-    /* Responsive Image Scaling: Prevents images from exceeding parent boundaries */
-    img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
+/* Responsive Image Scaling: Prevents images from exceeding parent boundaries */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        SNOWFALL CANVAS & SPARKS
        Full-screen non-blocking background particle system delivering an immersive
        winter atmosphere without obstructing mouse or touch interactions.
        ========================================================================== */
-    /* Canvas Layer: 60 FPS HTML5 Canvas particle simulation layer */
-    #snowfall {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 50;
-    }
+/* Canvas Layer: 60 FPS HTML5 Canvas particle simulation layer */
+#snowfall {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+}
 
-    /* Sparks Container: DOM layer holding stylized CSS-animated sparkling snowflake glyphs */
-    #snow-sparks {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 51;
-    }
+/* Sparks Container: DOM layer holding stylized CSS-animated sparkling snowflake glyphs */
+#snow-sparks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 51;
+}
 
-    /* Individual Spark Element: Positions the falling particle using custom CSS variables */
-    .spark {
-      position: absolute;
-      top: -5vh;
-      left: var(--x);
-      animation: spark-fall var(--d) linear infinite;
-      animation-delay: var(--delay);
-    }
+/* Individual Spark Element: Positions the falling particle using custom CSS variables */
+.spark {
+  position: absolute;
+  top: -5vh;
+  left: var(--x);
+  animation: spark-fall var(--d) linear infinite;
+  animation-delay: var(--delay);
+}
 
-    /* Spark Icon & Glow: Renders glyph, neon glow text-shadow, sway drift, and rotation */
-    .spark i {
-      display: block;
-      font-style: normal;
-      line-height: 1;
-      font-size: var(--s);
-      color: #ffffff;
-      opacity: var(--o);
-      text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(14, 165, 233, 0.8);
-      animation: spark-sway var(--sw) ease-in-out infinite alternate, spark-spin var(--d) linear infinite;
-    }
+/* Spark Icon & Glow: Renders glyph, neon glow text-shadow, sway drift, and rotation */
+.spark i {
+  display: block;
+  font-style: normal;
+  line-height: 1;
+  font-size: var(--s);
+  color: #ffffff;
+  opacity: var(--o);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 16px rgba(14, 165, 233, 0.8);
+  animation: spark-sway var(--sw) ease-in-out infinite alternate, spark-spin var(--d) linear infinite;
+}
 
-    /* Keyframe: Vertical descent from top off-screen to bottom off-screen */
-    @keyframes spark-fall {
-      from {
-        transform: translate3d(0, -6vh, 0);
-      }
+/* Keyframe: Vertical descent from top off-screen to bottom off-screen */
+@keyframes spark-fall {
+  from {
+    transform: translate3d(0, -6vh, 0);
+  }
 
-      to {
-        transform: translate3d(0, 108vh, 0);
-      }
-    }
+  to {
+    transform: translate3d(0, 108vh, 0);
+  }
+}
 
-    /* Keyframe: Horizontal pendulum swaying back and forth */
-    @keyframes spark-sway {
-      from {
-        transform: translateX(calc(var(--amp) * -1));
-      }
+/* Keyframe: Horizontal pendulum swaying back and forth */
+@keyframes spark-sway {
+  from {
+    transform: translateX(calc(var(--amp) * -1));
+  }
 
-      to {
-        transform: translateX(var(--amp));
-      }
-    }
+  to {
+    transform: translateX(var(--amp));
+  }
+}
 
-    /* Keyframe: Smooth 360-degree snowflake rotation */
-    @keyframes spark-spin {
-      from {
-        rotate: 0deg;
-      }
+/* Keyframe: Smooth 360-degree snowflake rotation */
+@keyframes spark-spin {
+  from {
+    rotate: 0deg;
+  }
 
-      to {
-        rotate: 360deg;
-      }
-    }
+  to {
+    rotate: 360deg;
+  }
+}
 
-    /* Reduced Motion Accessibility: Disables all snowfall layers when requested by user */
-    @media (prefers-reduced-motion: reduce) {
+/* Reduced Motion Accessibility: Disables all snowfall layers when requested by user */
+@media (prefers-reduced-motion: reduce) {
 
-      #snowfall,
-      #snow-sparks {
-        display: none !important;
-      }
-    }
+  #snowfall,
+  #snow-sparks {
+    display: none !important;
+  }
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        TOP STATUS ANNOUNCEMENT BAR
        Displays live mountain altitude, lift opening hours, quick communication
        links (Phone, WhatsApp), snowfall toggle button, and language selector.
        ========================================================================== */
-    .top-bar {
-      background: linear-gradient(90deg, #071220 0%, #0c2038 50%, #071220 100%);
-      color: #e2e8f0;
-      font-size: 0.82rem;
-      padding: 8px 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      position: relative;
-      z-index: 100;
-    }
+.top-bar {
+  background: linear-gradient(90deg, #071220 0%, #0c2038 50%, #071220 100%);
+  color: #e2e8f0;
+  font-size: 0.82rem;
+  padding: 8px 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  z-index: 100;
+}
 
-    /* Inner Flex Container: Spreads status information and quick links across max width */
-    .top-bar-inner {
-      max-width: 1300px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+/* Inner Flex Container: Spreads status information and quick links across max width */
+.top-bar-inner {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-    /* Live Mountain Status Badge: Groups green pulse dot with current piste operational info */
-    .status-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-    }
+/* Live Mountain Status Badge: Groups green pulse dot with current piste operational info */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
 
-    /* Green Pulsing Indicator: Glowing visual feedback signalling the ski track is open */
-    .pulse-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #10b981;
-      box-shadow: 0 0 10px #10b981;
-      animation: pulse 2s infinite;
-    }
+/* Green Pulsing Indicator: Glowing visual feedback signalling the ski track is open */
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 10px #10b981;
+  animation: pulse 2s infinite;
+}
 
-    /* Pulse Keyframe: Scales and fades the green status dot continuously */
-    @keyframes pulse {
+/* Pulse Keyframe: Scales and fades the green status dot continuously */
+@keyframes pulse {
 
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 
-      50% {
-        opacity: 0.5;
-        transform: scale(0.85);
-      }
-    }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+}
 
-    /* Quick Action Links Container: Holds phone, WhatsApp, snow switch, and language buttons */
-    .top-links {
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-    }
+/* Quick Action Links Container: Holds phone, WhatsApp, snow switch, and language buttons */
+.top-links {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
 
-    /* Quick Action Link Item: Icon and text with smooth hover color transition */
-    .top-links a {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      color: #94a3b8;
-      transition: color 0.2s;
-    }
+/* Quick Action Link Item: Icon and text with smooth hover color transition */
+.top-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #94a3b8;
+  transition: color 0.2s;
+}
 
-    .top-links a:hover {
-      color: #38bdf8;
-    }
+.top-links a:hover {
+  color: #38bdf8;
+}
 
-    /* Language Switcher Pill Container: Houses the MK and EN toggle buttons */
-    .lang-toggle {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius-pill);
-      padding: 3px 6px;
-      gap: 2px;
-      cursor: pointer;
-    }
+/* Language Switcher Pill Container: Houses the MK and EN toggle buttons */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+  padding: 3px 6px;
+  gap: 2px;
+  cursor: pointer;
+}
 
-    /* Language Switch Button: Individual language selector button */
-    .lang-btn {
-      padding: 2px 8px;
-      border-radius: var(--radius-pill);
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: #94a3b8;
-      background: transparent;
-      border: none;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+/* Language Switch Button: Individual language selector button */
+.lang-btn {
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
 
-    /* Active Language Button State: Highlighted in glacier cyan with subtle shadow */
-    .lang-btn.active {
-      background: var(--glacier-cyan);
-      color: #ffffff;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-    }
+/* Active Language Button State: Highlighted in glacier cyan with subtle shadow */
+.lang-btn.active {
+  background: var(--glacier-cyan);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
 
-    /* Snowfall Toggle Button: Allows visitors to turn the snowfall effect ON or OFF */
-    .snow-toggle-btn {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius-pill);
-      color: #cbd5e1;
-      font-size: 0.72rem;
-      padding: 3px 9px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      transition: all 0.2s;
-    }
+/* Snowfall Toggle Button: Allows visitors to turn the snowfall effect ON or OFF */
+.snow-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+  color: #cbd5e1;
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
 
-    .snow-toggle-btn:hover {
-      background: rgba(255, 255, 255, 0.16);
-      color: #ffffff;
-    }
+.snow-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #ffffff;
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        STICKY GLASS HEADER / NAVIGATION
        Sticky navigation bar featuring backdrop blur (glassmorphism), brand mark,
        primary page links with animated underline indicators, and reservation CTA.
        ========================================================================== */
-    .site-nav {
-      position: sticky;
-      top: 0;
-      z-index: 90;
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      background: rgba(255, 255, 255, 0.85);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      transition: all 0.3s ease;
-    }
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  transition: all 0.3s ease;
+}
 
-    /* Scrolled Modifier: Increases opacity and applies elevation shadow when page is scrolled */
-    .site-nav.scrolled {
-      background: rgba(255, 255, 255, 0.94);
-      box-shadow: 0 10px 30px rgba(9, 20, 36, 0.07);
-    }
+/* Scrolled Modifier: Increases opacity and applies elevation shadow when page is scrolled */
+.site-nav.scrolled {
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 30px rgba(9, 20, 36, 0.07);
+}
 
-    /* Header Centered Container: Flex layout organizing logo, navigation, and CTA */
-    .nav-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0.75rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+/* Header Centered Container: Flex layout organizing logo, navigation, and CTA */
+.nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    /* Brand Identity Link: Combines the mountain graphic mark and business typography */
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
+/* Brand Identity Link: Combines the mountain graphic mark and business typography */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
 
-    /* Brand Graphical Mark: Gradient mountain icon badge with glossy light reflection */
-    .brand-mark {
-      width: 44px;
-      height: 44px;
-      border-radius: 12px;
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
-      position: relative;
-      overflow: hidden;
-    }
+/* Brand Graphical Mark: Gradient mountain icon badge with glossy light reflection */
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+  position: relative;
+  overflow: hidden;
+}
 
-    /* Brand Glossy Reflection: Diagonal light streak accent over the icon */
-    .brand-mark::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
-    }
+/* Brand Glossy Reflection: Diagonal light streak accent over the icon */
+.brand-mark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+}
 
-    /* Brand Name Title: Bold business title in dark navy */
-    .brand-text h1 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: -0.01em;
-      color: var(--deep-navy);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+/* Brand Name Title: Bold business title in dark navy */
+.brand-text h1 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--deep-navy);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
-    /* Brand Subtitle / Region: Tagline highlighting the mountain location ('ПОНИКВА • ОСОГОВО') */
-    .brand-text span {
-      display: block;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--sun-orange);
-      margin-top: 2px;
-    }
+/* Brand Subtitle / Region: Tagline highlighting the mountain location ('ПОНИКВА • ОСОГОВО') */
+.brand-text span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sun-orange);
+  margin-top: 2px;
+}
 
-    /* Desktop Navigation Menu: Horizontal list of anchor links */
-    .nav-menu {
-      display: flex;
-      align-items: center;
-      gap: 2rem;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+/* Desktop Navigation Menu: Horizontal list of anchor links */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-    /* Navigation Link Item: Styled text link with relative positioning for underline effect */
-    .nav-menu a {
-      font-size: 0.92rem;
-      font-weight: 600;
-      color: var(--ink);
-      transition: color 0.2s ease;
-      position: relative;
-    }
+/* Navigation Link Item: Styled text link with relative positioning for underline effect */
+.nav-menu a {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+  transition: color 0.2s ease;
+  position: relative;
+}
 
-    /* Navigation Hover Underline: Animated expanding cyan indicator beneath the link */
-    .nav-menu a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--glacier-cyan);
-      transition: width 0.25s ease;
-      border-radius: 2px;
-    }
+/* Navigation Hover Underline: Animated expanding cyan indicator beneath the link */
+.nav-menu a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--glacier-cyan);
+  transition: width 0.25s ease;
+  border-radius: 2px;
+}
 
-    .nav-menu a:hover {
-      color: var(--glacier-cyan);
-    }
+.nav-menu a:hover {
+  color: var(--glacier-cyan);
+}
 
-    .nav-menu a:hover::after {
-      width: 100%;
-    }
+.nav-menu a:hover::after {
+  width: 100%;
+}
 
-    /* Header Right Actions: Wraps reservation button and mobile menu toggle */
-    .nav-cta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
+/* Header Right Actions: Wraps reservation button and mobile menu toggle */
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
 
-    /* Header Booking CTA Button: Eye-catching orange pill button triggering fast booking */
-    .btn-nav {
-      background: linear-gradient(135deg, var(--sun-orange) 0%, #ea580c 100%);
-      color: #ffffff !important;
-      font-weight: 700;
-      font-size: 0.9rem;
-      padding: 0.6rem 1.25rem;
-      border-radius: var(--radius-pill);
-      box-shadow: 0 4px 15px rgba(249, 115, 22, 0.35);
-      transition: all 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
+/* Header Booking CTA Button: Eye-catching orange pill button triggering fast booking */
+.btn-nav {
+  background: linear-gradient(135deg, var(--sun-orange) 0%, #ea580c 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.35);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
 
-    .btn-nav:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
-    }
+.btn-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+}
 
-    /* Mobile Language Switcher inside Navigation (hidden on desktop) */
-    .nav-lang-toggle {
-      display: none;
-    }
+/* Mobile Language Switcher inside Navigation (hidden on desktop) */
+.nav-lang-toggle {
+  display: none;
+}
 
-    /* Mobile Hamburger Toggle Button: Hidden on desktop; displayed on small screens */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 8px;
-    }
+/* Mobile Hamburger Toggle Button: Hidden on desktop; displayed on small screens */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
 
-    /* Hamburger Lines: Three horizontal bars animating into drawer trigger */
-    .menu-toggle span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--deep-navy);
-      margin: 5px 0;
-      border-radius: 2px;
-      transition: all 0.3s;
-    }
+/* Hamburger Lines: Three horizontal bars animating into drawer trigger */
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--deep-navy);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        HERO / WELCOME SECTION (WITH SEAMLESS CONTINUOUS ARTWORK)
        High-conversion introductory hero section highlighting trackside equipment
        pickup, value propositions, and primary CTA buttons.
        ========================================================================== */
-    .hero-section {
-      position: relative;
-      overflow: hidden;
-      padding: clamp(2.5rem, 6vw, 5rem) 1.5rem clamp(3rem, 7vw, 6rem);
-      background: linear-gradient(180deg, rgba(235, 244, 255, 0.8) 0%, rgba(240, 247, 255, 0.4) 100%);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.6);
-    }
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.5rem, 6vw, 5rem) 1.5rem clamp(3rem, 7vw, 6rem);
+  background: linear-gradient(180deg, rgba(235, 244, 255, 0.8) 0%, rgba(240, 247, 255, 0.4) 100%);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+}
 
-    /* Mountain Silhouette Backdrop: Low-opacity background texture showcasing Ponikva mountains */
-    .hero-backdrop {
-      position: absolute;
-      inset: 0;
-      opacity: 0.08;
-      background-image: var(--bg-mountain, url('/позадина.webp'));
-      background-size: cover;
-      background-position: center top;
-      pointer-events: none;
-    }
+/* Mountain Silhouette Backdrop: Low-opacity background texture showcasing Ponikva mountains */
+.hero-backdrop {
+  position: absolute;
+  inset: 0;
+  opacity: 0.08;
+  background-image: var(--bg-mountain, url('/позадина.webp'));
+  background-size: cover;
+  background-position: center top;
+  pointer-events: none;
+}
 
-    /* Ambient Sun Glow: Large blurred radial gradient giving warm sunrise effect */
-    .hero-glow {
-      position: absolute;
-      top: -120px;
-      right: 15%;
-      width: 450px;
-      height: 450px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(251, 146, 60, 0.22) 0%, rgba(56, 189, 248, 0.15) 50%, transparent 70%);
-      filter: blur(50px);
-      pointer-events: none;
-    }
+/* Ambient Sun Glow: Large blurred radial gradient giving warm sunrise effect */
+.hero-glow {
+  position: absolute;
+  top: -120px;
+  right: 15%;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 146, 60, 0.22) 0%, rgba(56, 189, 248, 0.15) 50%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
 
-    /* Hero Centered Container: Aligns headlines, badges, and highlights */
-    .hero-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 10;
-      text-align: center;
-    }
+/* Hero Centered Container: Aligns headlines, badges, and highlights */
+.hero-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  text-align: center;
+}
 
-    /* Location Value Pill: Eye-catching badge announcing trackside location */
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid rgba(14, 165, 233, 0.25);
-      padding: 6px 16px;
-      border-radius: var(--radius-pill);
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--alpine-blue);
-      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.08);
-      margin-bottom: 1.5rem;
-      backdrop-filter: blur(8px);
-    }
+/* Location Value Pill: Eye-catching badge announcing trackside location */
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--alpine-blue);
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.08);
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(8px);
+}
 
-    /* Main Hero Headline: Responsive fluid typography with balanced line breaks */
-    .hero-title {
-      font-size: clamp(2.2rem, 5.2vw, 4.2rem);
-      font-weight: 900;
-      line-height: 1.1;
-      color: var(--deep-navy);
-      margin-bottom: 1.25rem;
-      text-wrap: balance;
-    }
+/* Main Hero Headline: Responsive fluid typography with balanced line breaks */
+.hero-title {
+  font-size: clamp(2.2rem, 5.2vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--deep-navy);
+  margin-bottom: 1.25rem;
+  text-wrap: balance;
+}
 
-    /* Gradient Text Accent: Multi-color gradient fill spanning alpine blue to sun orange */
-    .hero-title .gradient-text {
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 60%, #ea580c 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+/* Gradient Text Accent: Multi-color gradient fill spanning alpine blue to sun orange */
+.hero-title .gradient-text {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 60%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-    /* Hero Subtitle Paragraph: Descriptive copy emphasizing sanitized, fitted equipment */
-    .hero-subtitle {
-      font-size: clamp(1.05rem, 1.8vw, 1.35rem);
-      line-height: 1.55;
-      color: var(--ink-muted);
-      max-width: 720px;
-      margin: 0 auto 2.25rem;
-      text-wrap: balance;
-    }
+/* Hero Subtitle Paragraph: Descriptive copy emphasizing sanitized, fitted equipment */
+.hero-subtitle {
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
+  line-height: 1.55;
+  color: var(--ink-muted);
+  max-width: 720px;
+  margin: 0 auto 2.25rem;
+  text-wrap: balance;
+}
 
-    /* CTA Button Group: Container holding primary booking and secondary explore buttons */
-    .hero-cta-group {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
-    }
+/* CTA Button Group: Container holding primary booking and secondary explore buttons */
+.hero-cta-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
 
-    /* Primary Action Button: High-visibility orange gradient button with shadow lift */
-    .btn-primary {
-      background: linear-gradient(135deg, var(--sun-orange) 0%, #ea580c 100%);
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 1.05rem;
-      padding: 0.9rem 2rem;
-      border-radius: var(--radius-pill);
-      box-shadow: var(--shadow-orange);
-      transition: all 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: none;
-      cursor: pointer;
-    }
+/* Primary Action Button: High-visibility orange gradient button with shadow lift */
+.btn-primary {
+  background: linear-gradient(135deg, var(--sun-orange) 0%, #ea580c 100%);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-orange);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
 
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 14px 28px rgba(249, 115, 22, 0.45);
-    }
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(249, 115, 22, 0.45);
+}
 
-    /* Secondary Action Button: Frosted white pill button with subtle border */
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--deep-navy);
-      font-weight: 700;
-      font-size: 1.05rem;
-      padding: 0.9rem 1.8rem;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(203, 213, 225, 0.9);
-      box-shadow: var(--shadow-sm);
-      transition: all 0.25s ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
+/* Secondary Action Button: Frosted white pill button with subtle border */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--deep-navy);
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
 
-    .btn-secondary:hover {
-      background: #ffffff;
-      border-color: var(--glacier-cyan);
-      color: var(--glacier-cyan);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
+.btn-secondary:hover {
+  background: #ffffff;
+  border-color: var(--glacier-cyan);
+  color: var(--glacier-cyan);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
 
-    /* Hero Highlights Grid: 4 value proposition cards below the main CTA buttons */
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.25rem;
-      max-width: 1080px;
-      margin: 0 auto;
-    }
+/* Hero Highlights Grid: 4 value proposition cards below the main CTA buttons */
+.hero-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  max-width: 1080px;
+  margin: 0 auto;
+}
 
-    /* Individual Highlight Card: Frosted glass card with icon, title, and descriptive snippet */
-    .highlight-card {
-      background: rgba(255, 255, 255, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(14px);
-      padding: 1.15rem 1.25rem;
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-align: left;
-      transition: all 0.3s ease;
-    }
+/* Individual Highlight Card: Frosted glass card with icon, title, and descriptive snippet */
+.highlight-card {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(14px);
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+  transition: all 0.3s ease;
+}
 
-    .highlight-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-md);
-      border-color: rgba(14, 165, 233, 0.3);
-    }
+.highlight-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(14, 165, 233, 0.3);
+}
 
-    /* Highlight Icon Box: Soft blue square holding emoji icon */
-    .highlight-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: rgba(14, 165, 233, 0.12);
-      color: var(--alpine-blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      font-size: 1.25rem;
-    }
+/* Highlight Icon Box: Soft blue square holding emoji icon */
+.highlight-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: rgba(14, 165, 233, 0.12);
+  color: var(--alpine-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.25rem;
+}
 
-    /* Highlight Information: Typography for the card title and short description */
-    .highlight-info h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 2px;
-      color: var(--deep-navy);
-    }
+/* Highlight Information: Typography for the card title and short description */
+.highlight-info h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 2px;
+  color: var(--deep-navy);
+}
 
-    .highlight-info p {
-      font-size: 0.78rem;
-      color: var(--ink-muted);
-      line-height: 1.3;
-    }
+.highlight-info p {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  line-height: 1.3;
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        MOUNTAIN SLOPE SHOWCASE SECTIONS (SKI, BOARD, KIDS)
        Alternating visual showcase rows pairing dynamic product renders with
        feature chips, brand badges, and direct rental CTA triggers.
        ========================================================================== */
-    .slope-stream {
-      position: relative;
-      background: #ffffff;
-      background-image:
-        radial-gradient(ellipse at 50% 0%, rgba(224, 242, 254, 0.6) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 50%, rgba(254, 215, 170, 0.25) 0%, transparent 50%),
-        radial-gradient(ellipse at 20% 80%, rgba(224, 242, 254, 0.5) 0%, transparent 60%);
-      padding: 3rem 0 6rem;
-    }
+.slope-stream {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: #ffffff;
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(224, 242, 254, 0.6) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(254, 215, 170, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(224, 242, 254, 0.5) 0%, transparent 60%);
+  padding: 3rem 0 6rem;
+}
 
-    /* Watermark Background Tracks: Subtle repeating silhouette texture in section background */
-    .slope-stream::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: var(--bg-mountain, url('/позадина.webp'));
-      background-repeat: repeat-y;
-      background-size: 100% auto;
-      opacity: 0.04;
-      pointer-events: none;
-    }
+/* Equipment Showcase Backdrop: Background texture with lowest z-index */
+.equipment-backdrop {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  background-image: var(--bg-mountain, url('/позадина.webp'));
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
 
-    /* Centered Stream Container: Houses the showcase section header and product rows */
-    .stream-container {
-      max-width: 1300px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      position: relative;
-      z-index: 2;
-    }
+/* Centered Stream Container: Houses the showcase section header and product rows */
+.stream-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 2;
+}
 
-    /* Reusable Section Header: Centered title and eyebrow category tag */
-    .section-header-badge {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
+/* Reusable Section Header: Centered title and eyebrow category tag */
+.section-header-badge {
+  text-align: center;
+  margin-bottom: 4rem;
+}
 
-    /* Eyebrow Label: Uppercase orange tracking header (e.g. 'НАШАТА ОПРЕМА') */
-    .section-eyebrow {
-      display: inline-block;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.15em;
-      color: var(--sun-orange);
-      margin-bottom: 0.5rem;
-    }
+/* Eyebrow Label: Uppercase orange tracking header (e.g. 'НАШАТА ОПРЕМА') */
+.section-eyebrow {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  color: var(--sun-orange);
+  margin-bottom: 0.5rem;
+}
 
-    /* Section Main Title: Fluid, bold section title */
-    .section-main-title {
-      font-size: clamp(2rem, 3.8vw, 3rem);
-      font-weight: 900;
-      color: var(--deep-navy);
-      letter-spacing: -0.02em;
-    }
+/* Section Main Title: Fluid, bold section title */
+.section-main-title {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 900;
+  color: var(--deep-navy);
+  letter-spacing: -0.02em;
+}
 
-    /* Showcase Row Layout: Two-column grid positioning imagery and product specifications */
-    .gear-showcase-row {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: clamp(2rem, 5vw, 4.5rem);
-      align-items: center;
-      margin-bottom: clamp(4rem, 8vw, 7.5rem);
-      position: relative;
-    }
+/* Showcase Row Layout: Two-column grid positioning imagery and product specifications */
+.gear-showcase-row {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  margin-bottom: clamp(4rem, 8vw, 7.5rem);
+  position: relative;
+}
 
-    /* Reversed Modifier: Inverts column order so image appears on right side */
-    .gear-showcase-row.reversed {
-      grid-template-columns: 1fr 1.1fr;
-    }
+/* Reversed Modifier: Inverts column order so image appears on right side */
+.gear-showcase-row.reversed {
+  grid-template-columns: 1fr 1.1fr;
+}
 
-    .gear-showcase-row.reversed .gear-visual {
-      order: 2;
-    }
+.gear-showcase-row.reversed .gear-visual {
+  order: 2;
+}
 
-    .gear-showcase-row.reversed .gear-content {
-      order: 1;
-    }
+.gear-showcase-row.reversed .gear-content {
+  order: 1;
+}
 
-    /* Centered Layout: Single column variant optimized for the kids & family sledges section */
-    .gear-showcase-row.centered-layout {
-      grid-template-columns: 1fr;
-      text-align: center;
-      max-width: 1050px;
-      margin-inline: auto;
-    }
+/* Centered Layout: Single column variant optimized for the kids & family sledges section */
+.gear-showcase-row.centered-layout {
+  grid-template-columns: 1fr;
+  text-align: center;
+  max-width: 1050px;
+  margin-inline: auto;
+}
 
-    .gear-showcase-row.centered-layout .gear-content {
-      max-width: 720px;
-      margin: 0 auto 2.5rem;
-    }
+.gear-showcase-row.centered-layout .gear-content {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
 
-    .gear-showcase-row.centered-layout .spec-pills {
-      justify-content: center;
-    }
+.gear-showcase-row.centered-layout .spec-pills {
+  justify-content: center;
+}
 
-    .gear-showcase-row.centered-layout .btn-wrap {
-      justify-content: center;
-    }
+.gear-showcase-row.centered-layout .btn-wrap {
+  justify-content: center;
+}
 
-    /* Gear Visual Wrapper: Holds the 3D product render, radial glow, and floating feature badges */
-    .gear-visual {
-      position: relative;
-    }
+/* Gear Visual Wrapper: Holds the 3D product render, radial glow, and floating feature badges */
+.gear-visual {
+  position: relative;
+}
 
-    /* Image Stage Radial Blur: Ambient circular light behind gear photography */
-    .image-stage-backdrop {
-      position: absolute;
-      inset: -5% -5% -5% -5%;
-      border-radius: 40px;
-      background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.12) 0%, rgba(249, 115, 22, 0.05) 50%, transparent 75%);
-      filter: blur(25px);
-      z-index: 1;
-      pointer-events: none;
-    }
+/* Image Stage Radial Blur: Ambient circular light behind gear photography */
+.image-stage-backdrop {
+  position: absolute;
+  inset: -5% -5% -5% -5%;
+  border-radius: 40px;
+  background: radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.12) 0%, rgba(249, 115, 22, 0.05) 50%, transparent 75%);
+  filter: blur(25px);
+  z-index: 1;
+  pointer-events: none;
+}
 
-    /* Gear Image Stage: Interactive wrapper applying gentle hover lift and spring easing */
-    .gear-image-wrapper {
-      position: relative;
-      z-index: 2;
-      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-    }
+/* Gear Image Stage: Interactive wrapper applying gentle hover lift and spring easing */
+.gear-image-wrapper {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
-    .gear-image-wrapper:hover {
-      transform: scale(1.025) translateY(-6px);
-    }
+.gear-image-wrapper:hover {
+  transform: scale(1.025) translateY(-6px);
+}
 
-    .gear-image-wrapper img {
-      width: 100%;
-      height: auto;
-      filter: drop-shadow(0 18px 30px rgba(9, 20, 36, 0.14));
-      user-select: none;
-    }
+.gear-image-wrapper img {
+  width: 100%;
+  height: auto;
+  /* filter: drop-shadow(0 18px 30px rgba(9, 20, 36, 0.14)); */
+  user-select: none;
+}
 
-    /* Floating Feature Badges: Glassmorphic pills overlaid on product photography highlighting key attributes */
-    .floating-card-badge {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
-      padding: 0.65rem 1rem;
-      border-radius: var(--radius-md);
-      box-shadow: 0 10px 25px rgba(9, 20, 36, 0.1);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--deep-navy);
-      z-index: 5;
-      animation: floatBadge 4s ease-in-out infinite alternate;
-    }
+/* Floating Feature Badges: Glassmorphic pills overlaid on product photography highlighting key attributes */
+.floating-card-badge {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px rgba(9, 20, 36, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+  z-index: 5;
+  animation: floatBadge 4s ease-in-out infinite alternate;
+}
 
-    .floating-card-badge.badge-top-left {
-      top: 10%;
-      left: 2%;
-    }
+.floating-card-badge.badge-top-left {
+  top: 10%;
+  left: 2%;
+}
 
-    .floating-card-badge.badge-bottom-right {
-      bottom: 8%;
-      right: 4%;
-      animation-delay: -2s;
-    }
+.floating-card-badge.badge-bottom-right {
+  bottom: 8%;
+  right: 4%;
+  animation-delay: -2s;
+}
 
-    /* Floating Keyframe: Gentle vertical translation simulating weightless hovering */
-    @keyframes floatBadge {
-      0% {
-        transform: translateY(0px);
-      }
+/* Floating Keyframe: Gentle vertical translation simulating weightless hovering */
+@keyframes floatBadge {
+  0% {
+    transform: translateY(0px);
+  }
 
-      100% {
-        transform: translateY(-8px);
-      }
-    }
+  100% {
+    transform: translateY(-8px);
+  }
+}
 
-    /* Gear Content Column: Typography, description, spec chips, and call-to-actions */
-    .gear-content {
-      position: relative;
-      z-index: 3;
-    }
+/* Gear Content Column: Typography, description, spec chips, and call-to-actions */
+.gear-content {
+  position: relative;
+  z-index: 3;
+}
 
-    /* Product Tag: Pill tag indicating category (e.g. 'СКИ КОМПЛЕТИ') */
-    .gear-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(14, 165, 233, 0.1);
-      color: var(--alpine-blue);
-      font-size: 0.8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      margin-bottom: 1rem;
-    }
+/* Product Tag: Pill tag indicating category (e.g. 'СКИ КОМПЛЕТИ') */
+.gear-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--alpine-blue);
+  font-size: 0.8rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1rem;
+}
 
-    /* Product Title: Bold product line name */
-    .gear-title {
-      font-size: clamp(1.8rem, 3.2vw, 2.7rem);
-      font-weight: 800;
-      line-height: 1.15;
-      color: var(--deep-navy);
-      margin-bottom: 1rem;
-      text-wrap: balance;
-    }
+/* Product Title: Bold product line name */
+.gear-title {
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--deep-navy);
+  margin-bottom: 1rem;
+  text-wrap: balance;
+}
 
-    /* Product Description: Summary of package inclusions and fitting */
-    .gear-desc {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: var(--ink-muted);
-      margin-bottom: 1.5rem;
-      text-wrap: balance;
-    }
+/* Product Description: Summary of package inclusions and fitting */
+.gear-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+  text-wrap: balance;
+}
 
-    /* Specification Pill List: Container for technical chip badges */
-    .spec-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-bottom: 2rem;
-    }
+/* Specification Pill List: Container for technical chip badges */
+.spec-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2rem;
+}
 
-    /* Spec Chip Badge: Individual chip highlighting boot sizes, tuning, or certifications */
-    .spec-pill {
-      background: #f1f5f9;
-      border: 1px solid #e2e8f0;
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--ink);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: all 0.2s;
-    }
+/* Spec Chip Badge: Individual chip highlighting boot sizes, tuning, or certifications */
+.spec-pill {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
 
-    .spec-pill:hover {
-      background: #ffffff;
-      border-color: var(--glacier-cyan);
-      color: var(--alpine-blue);
-      box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
-    }
+.spec-pill:hover {
+  background: #ffffff;
+  border-color: var(--glacier-cyan);
+  color: var(--alpine-blue);
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
+}
 
-    /* Action Button Wrapper: Arranges booking and direct call buttons */
-    .btn-wrap {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
+/* Action Button Wrapper: Arranges booking and direct call buttons */
+.btn-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        WHY US / THE PONIKVA TRACKSIDE ADVANTAGE (FEATURES GRID)
        Showcases core service advantages: 0-meter trackside pickup, certified ISO DIN
        binding calibration, ozone heated boot drying, and combined villa accommodation.
        ========================================================================== */
-    .features-section {
-      background: linear-gradient(180deg, #f8fafc 0%, #eef5fb 100%);
-      padding: 5rem 1.5rem;
-      border-top: 1px solid rgba(226, 232, 240, 0.8);
-      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-      position: relative;
-    }
+.features-section {
+  background: linear-gradient(180deg, #f8fafc 0%, #eef5fb 100%);
+  padding: 5rem 1.5rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+  position: relative;
+}
 
-    /* Centered Features Container */
-    .features-container {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
+/* Centered Features Container */
+.features-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
 
-    /* Features Responsive Grid: Auto-fit multi-column layout for advantage cards */
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.75rem;
-      margin-top: 3.5rem;
-    }
+/* Features Responsive Grid: Auto-fit multi-column layout for advantage cards */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
 
-    /* Feature Advantage Card: Interactive white card with gradient accent top line on hover */
-    .feature-card {
-      background: #ffffff;
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      border-radius: var(--radius-xl);
-      padding: 2rem 1.75rem;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      overflow: hidden;
-    }
+/* Feature Advantage Card: Interactive white card with gradient accent top line on hover */
+.feature-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-xl);
+  padding: 2rem 1.75rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
 
-    /* Feature Card Top Accent: Subtle dual-color line revealing upon hover */
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(90deg, var(--glacier-cyan), var(--sun-orange));
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
+/* Feature Card Top Accent: Subtle dual-color line revealing upon hover */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--glacier-cyan), var(--sun-orange));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
-    .feature-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--shadow-lg);
-      border-color: rgba(14, 165, 233, 0.3);
-    }
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(14, 165, 233, 0.3);
+}
 
-    .feature-card:hover::before {
-      opacity: 1;
-    }
+.feature-card:hover::before {
+  opacity: 1;
+}
 
-    /* Feature Icon Badge Box: Rounded square with soft cyan gradient fill */
-    .feature-icon-box {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(56, 189, 248, 0.2) 100%);
-      color: var(--alpine-blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 1.25rem;
-    }
+/* Feature Icon Badge Box: Rounded square with soft cyan gradient fill */
+.feature-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(56, 189, 248, 0.2) 100%);
+  color: var(--alpine-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
 
-    /* Advantage Headline */
-    .feature-card h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--deep-navy);
-      margin-bottom: 0.6rem;
-    }
+/* Advantage Headline */
+.feature-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+  margin-bottom: 0.6rem;
+}
 
-    /* Advantage Description Body */
-    .feature-card p {
-      font-size: 0.92rem;
-      color: var(--ink-muted);
-      line-height: 1.55;
-    }
+/* Advantage Description Body */
+.feature-card p {
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        PRICING & PACKAGES SECTION
        Presents transparent daily rental prices for complete ski packages, snowboard
        sets, and kids' sledges with explicit checklists of included equipment.
        ========================================================================== */
-    .pricing-section {
-      background: #ffffff;
-      padding: 5.5rem 1.5rem;
-    }
+.pricing-section {
+  background: #ffffff;
+  padding: 5.5rem 1.5rem;
+}
 
-    /* Centered Container */
-    .pricing-container {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
+/* Centered Container */
+.pricing-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
 
-    /* Responsive Pricing Grid: Card columns for each package category */
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.75rem;
-      margin-top: 3.5rem;
-    }
+/* Responsive Pricing Grid: Card columns for each package category */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-top: 3.5rem;
+}
 
-    /* Individual Pricing Tier Card */
-    .pricing-card {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: var(--radius-xl);
-      padding: 2.25rem 2rem;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: all 0.3s ease;
-      position: relative;
-    }
+/* Individual Pricing Tier Card */
+.pricing-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-xl);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+  position: relative;
+}
 
-    /* Featured Plan Modifier (Popular Ski Package): Highlighted with cyan border and glow */
-    .pricing-card.featured {
-      border: 2px solid var(--glacier-cyan);
-      box-shadow: 0 15px 40px rgba(14, 165, 233, 0.15);
-      background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
-    }
+/* Featured Plan Modifier (Popular Ski Package): Highlighted with cyan border and glow */
+.pricing-card.featured {
+  border: 2px solid var(--glacier-cyan);
+  box-shadow: 0 15px 40px rgba(14, 165, 233, 0.15);
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
 
-    /* Popular Badge Ribbon: Top floating badge marking the most popular package */
-    .pricing-badge {
-      position: absolute;
-      top: -12px;
-      right: 24px;
-      background: linear-gradient(135deg, var(--sun-orange), #ea580c);
-      color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 4px 12px;
-      border-radius: var(--radius-pill);
-      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
-    }
+/* Popular Badge Ribbon: Top floating badge marking the most popular package */
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  right: 24px;
+  background: linear-gradient(135deg, var(--sun-orange), #ea580c);
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+}
 
-    .pricing-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-    }
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
 
-    /* Package Title */
-    .pricing-card h3 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--deep-navy);
-      margin-bottom: 0.35rem;
-    }
+/* Package Title */
+.pricing-card h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--deep-navy);
+  margin-bottom: 0.35rem;
+}
 
-    /* Package Subtitle Tagline */
-    .pricing-tagline {
-      font-size: 0.85rem;
-      color: var(--ink-muted);
-      margin-bottom: 1.5rem;
-    }
+/* Package Subtitle Tagline */
+.pricing-tagline {
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.5rem;
+}
 
-    /* Daily Rate Figure: Large font displaying daily cost in Macedonian Denars (MKD) */
-    .pricing-rate {
-      font-family: var(--font-display);
-      font-size: 2.2rem;
-      font-weight: 900;
-      color: var(--deep-navy);
-      line-height: 1;
-      margin-bottom: 1.5rem;
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
-    }
+/* Daily Rate Figure: Large font displaying daily cost in Macedonian Denars (MKD) */
+.pricing-rate {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--deep-navy);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
 
-    .pricing-rate span {
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: var(--ink-light);
-    }
+.pricing-rate span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink-light);
+}
 
-    /* Included Features List */
-    .pricing-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem 0;
-      border-top: 1px solid #f1f5f9;
-      padding-top: 1.25rem;
-    }
+/* Included Features List */
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.25rem;
+}
 
-    /* Individual Inclusions Item with Checkmark */
-    .pricing-features li {
-      font-size: 0.88rem;
-      color: var(--ink);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 0.85rem;
-    }
+/* Individual Inclusions Item with Checkmark */
+.pricing-features li {
+  font-size: 0.88rem;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.85rem;
+}
 
-    .pricing-features li svg {
-      width: 18px;
-      height: 18px;
-      color: var(--alpine-blue);
-      flex-shrink: 0;
-    }
+.pricing-features li svg {
+  width: 18px;
+  height: 18px;
+  color: var(--alpine-blue);
+  flex-shrink: 0;
+}
 
-    /* Package Select Button: Direct shortcut selecting this gear type in booking form */
-    .btn-pricing {
-      width: 100%;
-      text-align: center;
-      padding: 0.8rem;
-      border-radius: var(--radius-pill);
-      font-weight: 700;
-      font-size: 0.92rem;
-      border: 1px solid #cbd5e1;
-      background: #ffffff;
-      color: var(--deep-navy);
-      cursor: pointer;
-      transition: all 0.25s ease;
-    }
+/* Package Select Button: Direct shortcut selecting this gear type in booking form */
+.btn-pricing {
+  width: 100%;
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: var(--radius-pill);
+  font-weight: 700;
+  font-size: 0.92rem;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: var(--deep-navy);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
 
-    .btn-pricing:hover,
-    .pricing-card.featured .btn-pricing {
-      background: var(--glacier-cyan);
-      border-color: var(--glacier-cyan);
-      color: #ffffff;
-      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
-    }
+.btn-pricing:hover,
+.pricing-card.featured .btn-pricing {
+  background: var(--glacier-cyan);
+  border-color: var(--glacier-cyan);
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
+}
 
-    .pricing-card.featured .btn-pricing:hover {
-      background: var(--alpine-blue);
-      border-color: var(--alpine-blue);
-    }
+.pricing-card.featured .btn-pricing:hover {
+  background: var(--alpine-blue);
+  border-color: var(--alpine-blue);
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        VILLA NADJA PONIKVA SECTION (MOUNTAIN CHALET RETREAT)
        Dark luxury mountain chalet theme detailing guest capacity, amenities
        (wood fireplace, BBQ, heating), and instant booking inquiry links.
        ========================================================================== */
-    .villa-section {
-      background: linear-gradient(180deg, #07101d 0%, #0c1a2e 100%);
-      color: #ffffff;
-      padding: clamp(4rem, 8vw, 7rem) 1.5rem;
-      position: relative;
-      overflow: hidden;
-    }
+.villa-section {
+  background: linear-gradient(180deg, #07101d 0%, #0c1a2e 100%);
+  color: #ffffff;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
 
-    /* Ambient Warm Glow: Deep blurred radial glow enhancing cozy fire warmth */
-    .villa-backdrop-glow {
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      transform: translateY(-50%);
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 70%);
-      filter: blur(60px);
-      pointer-events: none;
-    }
+/* Ambient Warm Glow: Deep blurred radial glow enhancing cozy fire warmth */
+.villa-backdrop-glow {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.12) 0%, rgba(14, 165, 233, 0.1) 50%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
 
-    .villa-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 5;
-    }
+.villa-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
 
-    /* Villa Glass Card: 2-column frosted dark glass card */
-    .villa-card {
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap: clamp(2rem, 5vw, 4rem);
-      align-items: center;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius-xl);
-      padding: clamp(1.5rem, 3.5vw, 3rem);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
-    }
+/* Villa Glass Card: 2-column frosted dark glass card */
+.villa-card {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3.5vw, 3rem);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.35);
+}
 
-    /* Chalet Photo Frame: Curved overflow container with zoom effect on hover */
-    .villa-image-frame {
-      position: relative;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    }
+/* Chalet Photo Frame: Curved overflow container with zoom effect on hover */
+.villa-image-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
 
-    .villa-image-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease;
-    }
+.villa-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
 
-    .villa-card:hover .villa-image-frame img {
-      transform: scale(1.04);
-    }
+.villa-card:hover .villa-image-frame img {
+  transform: scale(1.04);
+}
 
-    /* Overlaid Category Tag */
-    .villa-tag-badge {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(7, 16, 29, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #f8fafc;
-      font-size: 0.78rem;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      backdrop-filter: blur(8px);
-    }
+/* Overlaid Category Tag */
+.villa-tag-badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: rgba(7, 16, 29, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #f8fafc;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(8px);
+}
 
-    .villa-content h2 {
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      color: #ffffff;
-      margin-bottom: 1rem;
-    }
+.villa-content h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
 
-    .villa-content p {
-      font-size: 1.05rem;
-      line-height: 1.6;
-      color: #cbd5e1;
-      margin-bottom: 1.75rem;
-    }
+.villa-content p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 1.75rem;
+}
 
-    /* Villa Amenities Grid: 2-column grid displaying key chalet amenities */
-    .villa-amenities {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 2.25rem;
-    }
+/* Villa Amenities Grid: 2-column grid displaying key chalet amenities */
+.villa-amenities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2.25rem;
+}
 
-    /* Amenity Item: Icon and description label */
-    .amenity-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: #e2e8f0;
-    }
+/* Amenity Item: Icon and description label */
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e2e8f0;
+}
 
-    .amenity-item svg {
-      color: var(--sun-orange);
-      flex-shrink: 0;
-    }
+.amenity-item svg {
+  color: var(--sun-orange);
+  flex-shrink: 0;
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        INTERACTIVE BOOKING & WHATSAPP / VIBER CONCIERGE
        Two-column contact center: Left column offers direct calling, WhatsApp, and
        Viber buttons; Right column provides an interactive form with live message preview.
        ========================================================================== */
-    .booking-section {
-      background: #f8fafc;
-      padding: clamp(4rem, 8vw, 7rem) 1.5rem;
-      position: relative;
-    }
+.booking-section {
+  background: #f8fafc;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+  position: relative;
+}
 
-    .booking-container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+.booking-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
 
-    /* Main Booking Box: 2-column split card on desktop */
-    .booking-box {
-      background: #ffffff;
-      border: 1px solid rgba(226, 232, 240, 0.9);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow-lg);
-      padding: clamp(2rem, 5vw, 3.5rem);
-      display: grid;
-      grid-template-columns: 1.15fr 1fr;
-      gap: clamp(2rem, 4vw, 3.5rem);
-    }
+/* Main Booking Box: 2-column split card on desktop */
+.booking-box {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
 
-    .booking-info h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      color: var(--deep-navy);
-      margin-bottom: 0.75rem;
-    }
+.booking-info h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--deep-navy);
+  margin-bottom: 0.75rem;
+}
 
-    .booking-info p {
-      color: var(--ink-muted);
-      line-height: 1.6;
-      margin-bottom: 2rem;
-    }
+.booking-info p {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
 
-    /* Direct Contact Stack: Direct Call, WhatsApp Chat, and Viber Chat buttons */
-    .direct-contacts {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
+/* Direct Contact Stack: Direct Call, WhatsApp Chat, and Viber Chat buttons */
+.direct-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
 
-    /* Direct Action Button Base */
-    .contact-action-btn {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.9rem 1.25rem;
-      border-radius: var(--radius-md);
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: all 0.25s ease;
-      text-decoration: none;
-    }
+/* Direct Action Button Base */
+.contact-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
 
-    /* Direct Phone Action Button */
-    .contact-action-btn.btn-phone {
-      background: var(--deep-navy);
-      color: #ffffff;
-    }
+/* Direct Phone Action Button */
+.contact-action-btn.btn-phone {
+  background: var(--deep-navy);
+  color: #ffffff;
+}
 
-    .contact-action-btn.btn-phone:hover {
-      background: #1e293b;
-      transform: translateY(-2px);
-    }
+.contact-action-btn.btn-phone:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+}
 
-    /* Direct WhatsApp Action Button */
-    .contact-action-btn.btn-wa {
-      background: #25d366;
-      color: #ffffff;
-    }
+/* Direct WhatsApp Action Button */
+.contact-action-btn.btn-wa {
+  background: #25d366;
+  color: #ffffff;
+}
 
-    .contact-action-btn.btn-wa:hover {
-      background: #20bd5a;
-      transform: translateY(-2px);
-    }
+.contact-action-btn.btn-wa:hover {
+  background: #20bd5a;
+  transform: translateY(-2px);
+}
 
-    /* Direct Viber Action Button */
-    .contact-action-btn.btn-viber {
-      background: #7360f2;
-      color: #ffffff;
-    }
+/* Direct Viber Action Button */
+.contact-action-btn.btn-viber {
+  background: #7360f2;
+  color: #ffffff;
+}
 
-    .contact-action-btn.btn-viber:hover {
-      background: #624fe0;
-      transform: translateY(-2px);
-    }
+.contact-action-btn.btn-viber:hover {
+  background: #624fe0;
+  transform: translateY(-2px);
+}
 
-    /* Trackside Mini-Card: Quick physical address and operating hours badge */
-    .location-card-mini {
-      background: #f1f5f9;
-      border-radius: var(--radius-md);
-      padding: 1rem 1.25rem;
-      font-size: 0.85rem;
-      color: var(--ink);
-    }
+/* Trackside Mini-Card: Quick physical address and operating hours badge */
+.location-card-mini {
+  background: #f1f5f9;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  font-size: 0.85rem;
+  color: var(--ink);
+}
 
-    .location-card-mini strong {
-      display: block;
-      color: var(--deep-navy);
-      margin-bottom: 4px;
-    }
+.location-card-mini strong {
+  display: block;
+  color: var(--deep-navy);
+  margin-bottom: 4px;
+}
 
-    /* Interactive Booking Form Container */
-    .booking-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.15rem;
-    }
+/* Interactive Booking Form Container */
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
 
-    /* Form Input Group: Label and input container */
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
+/* Form Input Group: Label and input container */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
 
-    .form-group label {
-      font-size: 0.88rem;
-      font-weight: 700;
-      color: var(--deep-navy);
-    }
+.form-group label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+}
 
-    /* Form Input / Textarea Control */
-    .form-control {
-      font-family: inherit;
-      font-size: 0.95rem;
-      color: var(--ink);
-      background: #f8fafc;
-      border: 1.5px solid #e2e8f0;
-      border-radius: var(--radius-md);
-      padding: 0.75rem 1rem;
-      width: 100%;
-      transition: all 0.2s ease;
-    }
+/* Form Input / Textarea Control */
+.form-control {
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--ink);
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  width: 100%;
+  transition: all 0.2s ease;
+}
 
-    .form-control:focus {
-      outline: none;
-      border-color: var(--glacier-cyan);
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
-    }
+.form-control:focus {
+  outline: none;
+  border-color: var(--glacier-cyan);
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+}
 
-    /* Gear Selection Radio Grid */
-    .category-pills {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
-    }
+/* Gear Selection Radio Grid */
+.category-pills {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
 
-    .category-pill-label {
-      cursor: pointer;
-    }
+.category-pill-label {
+  cursor: pointer;
+}
 
-    .category-pill-label input {
-      display: none;
-    }
+.category-pill-label input {
+  display: none;
+}
 
-    /* Pill Selection Button Surface */
-    .pill-content {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0.65rem 0.85rem;
-      background: #f1f5f9;
-      border: 1.5px solid transparent;
-      border-radius: var(--radius-md);
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--ink);
-      transition: all 0.2s ease;
-    }
+/* Pill Selection Button Surface */
+.pill-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.65rem 0.85rem;
+  background: #f1f5f9;
+  border: 1.5px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
 
-    /* Active Checked Radio Pill State */
-    .category-pill-label input:checked+.pill-content {
-      background: #e0f2fe;
-      border-color: var(--glacier-cyan);
-      color: var(--alpine-blue);
-    }
+/* Active Checked Radio Pill State */
+.category-pill-label input:checked+.pill-content {
+  background: #e0f2fe;
+  border-color: var(--glacier-cyan);
+  color: var(--alpine-blue);
+}
 
-    /* People Stepper Controls (+ / -) */
-    .counter-group {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+/* People Stepper Controls (+ / -) */
+.counter-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-    .counter-btn {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      border: 1.5px solid #cbd5e1;
-      background: #ffffff;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--deep-navy);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
+.counter-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
 
-    .counter-btn:hover {
-      border-color: var(--glacier-cyan);
-      color: var(--glacier-cyan);
-    }
+.counter-btn:hover {
+  border-color: var(--glacier-cyan);
+  color: var(--glacier-cyan);
+}
 
-    .counter-value {
-      font-size: 1.1rem;
-      font-weight: 700;
-      min-width: 32px;
-      text-align: center;
-    }
+.counter-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-width: 32px;
+  text-align: center;
+}
 
-    /* Live Message Preview Box: Previews real-time WhatsApp output message */
-    .preview-box {
-      background: #f8fafc;
-      border: 1px dashed #cbd5e1;
-      border-radius: var(--radius-md);
-      padding: 0.85rem 1rem;
-      font-size: 0.82rem;
-      color: var(--ink-muted);
-    }
+/* Live Message Preview Box: Previews real-time WhatsApp output message */
+.preview-box {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
 
-    .preview-box strong {
-      display: block;
-      color: var(--deep-navy);
-      margin-bottom: 4px;
-    }
+.preview-box strong {
+  display: block;
+  color: var(--deep-navy);
+  margin-bottom: 4px;
+}
 
-    .preview-text {
-      font-family: monospace;
-      white-space: pre-line;
-      color: #334155;
-    }
+.preview-text {
+  font-family: monospace;
+  white-space: pre-line;
+  color: #334155;
+}
 
-    /* Form Submit Button: Launches WhatsApp with pre-filled inquiry text */
-    .btn-submit-booking {
-      background: linear-gradient(135deg, #25d366 0%, #1ea952 100%);
-      color: #ffffff;
-      font-size: 1rem;
-      font-weight: 700;
-      padding: 0.95rem 1.5rem;
-      border-radius: var(--radius-pill);
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
-      transition: all 0.25s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-    }
+/* Form Submit Button: Launches WhatsApp with pre-filled inquiry text */
+.btn-submit-booking {
+  background: linear-gradient(135deg, #25d366 0%, #1ea952 100%);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.95rem 1.5rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
 
-    .btn-submit-booking:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
-    }
+.btn-submit-booking:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        LOCATION / FAQ SECTION
        Provides geographical directions, opening hours, road maintenance info,
        Google Maps launch button, and an interactive FAQ accordion.
        ========================================================================== */
-    .location-section {
-      background: #ffffff;
-      padding: 5rem 1.5rem;
-      border-top: 1px solid #e2e8f0;
-    }
+.location-section {
+  background: #ffffff;
+  padding: 5rem 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
 
-    /* 2-Column Container: Location facts on left, FAQ accordion on right */
-    .location-container {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
+/* 2-Column Container: Location facts on left, FAQ accordion on right */
+.location-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
 
-    .location-info h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      margin-bottom: 1rem;
-    }
+.location-info h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  margin-bottom: 1rem;
+}
 
-    .location-info p {
-      color: var(--ink-muted);
-      line-height: 1.6;
-      margin-bottom: 2rem;
-    }
+.location-info p {
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
 
-    /* Location Metadata List: Address, hours, and road conditions */
-    .location-meta-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
+/* Location Metadata List: Address, hours, and road conditions */
+.location-meta-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
 
-    .location-meta-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-    }
+.location-meta-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
 
-    .meta-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      background: #e0f2fe;
-      color: var(--alpine-blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
+.meta-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: #e0f2fe;
+  color: var(--alpine-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
 
-    .meta-content h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--deep-navy);
-      margin-bottom: 2px;
-    }
+.meta-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--deep-navy);
+  margin-bottom: 2px;
+}
 
-    .meta-content p {
-      font-size: 0.85rem;
-      margin: 0;
-    }
+.meta-content p {
+  font-size: 0.85rem;
+  margin: 0;
+}
 
-    /* FAQ Accordion List */
-    .faq-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+/* FAQ Accordion List */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
-    /* Individual FAQ Item Container */
-    .faq-item {
-      border: 1px solid #e2e8f0;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: #ffffff;
-      transition: all 0.2s;
-    }
+/* Individual FAQ Item Container */
+.faq-item {
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #ffffff;
+  transition: all 0.2s;
+}
 
-    /* Accordion Question Trigger: Displays plus indicator that rotates on open */
-    .faq-question {
-      padding: 1.1rem 1.25rem;
-      font-weight: 700;
-      font-size: 0.95rem;
-      color: var(--deep-navy);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      user-select: none;
-    }
+/* Accordion Question Trigger: Displays plus indicator that rotates on open */
+.faq-question {
+  padding: 1.1rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--deep-navy);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
 
-    .faq-question::after {
-      content: '+';
-      font-size: 1.2rem;
-      color: var(--glacier-cyan);
-      transition: transform 0.2s;
-    }
+.faq-question::after {
+  content: '+';
+  font-size: 1.2rem;
+  color: var(--glacier-cyan);
+  transition: transform 0.2s;
+}
 
-    /* Rotates plus symbol into an 'x' when opened */
-    .faq-item.open .faq-question::after {
-      transform: rotate(45deg);
-    }
+/* Rotates plus symbol into an 'x' when opened */
+.faq-item.open .faq-question::after {
+  transform: rotate(45deg);
+}
 
-    /* Accordion Answer Content: Animates max-height from 0 to expanded */
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 1.25rem;
-      font-size: 0.88rem;
-      color: var(--ink-muted);
-      line-height: 1.55;
-      transition: max-height 0.3s ease, padding 0.3s ease;
-    }
+/* Accordion Answer Content: Animates max-height from 0 to expanded */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.25rem;
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  line-height: 1.55;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
 
-    .faq-item.open .faq-answer {
-      max-height: 200px;
-      padding: 0 1.25rem 1.1rem;
-    }
+.faq-item.open .faq-answer {
+  max-height: 200px;
+  padding: 0 1.25rem 1.1rem;
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        FOOTER
        Multi-column dark footer providing branding, navigation links,
        chalet info, direct contact channels, and dynamic copyright statement.
        ========================================================================== */
-    .site-footer {
-      background: #060e18;
-      color: #94a3b8;
-      padding: 4.5rem 1.5rem 2.5rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
+.site-footer {
+  background: #060e18;
+  color: #94a3b8;
+  padding: 4.5rem 1.5rem 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
 
-    .footer-container {
-      max-width: 1240px;
-      margin: 0 auto;
-    }
+.footer-container {
+  max-width: 1240px;
+  margin: 0 auto;
+}
 
-    /* Footer 4-Column Grid (Brand, Gear, Services, Contact) */
-    .footer-main-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-      gap: 3rem;
-      margin-bottom: 3.5rem;
-    }
+/* Footer 4-Column Grid (Brand, Gear, Services, Contact) */
+.footer-main-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
 
-    .footer-brand h3 {
-      color: #ffffff;
-      font-size: 1.4rem;
-      margin-bottom: 0.5rem;
-    }
+.footer-brand h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
 
-    .footer-brand p {
-      font-size: 0.88rem;
-      line-height: 1.6;
-      color: #64748b;
-      margin-bottom: 1.25rem;
-    }
+.footer-brand p {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: #64748b;
+  margin-bottom: 1.25rem;
+}
 
-    .footer-col h4 {
-      color: #ffffff;
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-    }
+.footer-col h4 {
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
 
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
 
-    .footer-links a {
-      font-size: 0.88rem;
-      color: #94a3b8;
-      transition: color 0.2s;
-    }
+.footer-links a {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  transition: color 0.2s;
+}
 
-    .footer-links a:hover {
-      color: #38bdf8;
-    }
+.footer-links a:hover {
+  color: #38bdf8;
+}
 
-    /* Sub-Footer Row: Copyright and craftsmanship notice */
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      padding-top: 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-      font-size: 0.82rem;
-      color: #64748b;
-    }
+/* Sub-Footer Row: Copyright and craftsmanship notice */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.82rem;
+  color: #64748b;
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        MOBILE FLOATING STICKY ACTION BAR
        Fixed bottom pill bar displayed only on mobile viewports for quick
        thumb-friendly access to phone calls, WhatsApp chat, and booking.
        ========================================================================== */
-    .mobile-bar {
-      display: none;
-      position: fixed;
-      bottom: 16px;
-      left: 16px;
-      right: 16px;
-      background: rgba(10, 19, 34, 0.92);
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius-pill);
-      padding: 8px 12px;
-      z-index: 80;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
-      justify-content: space-around;
-      align-items: center;
-    }
+.mobile-bar {
+  display: none;
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  background: rgba(10, 19, 34, 0.92);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+  padding: 8px 12px;
+  z-index: 80;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  justify-content: space-around;
+  align-items: center;
+}
 
-    .mobile-bar a {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.84rem;
-      font-weight: 700;
-      color: #ffffff;
-      padding: 6px 12px;
-      border-radius: var(--radius-pill);
-      transition: background 0.2s;
-    }
+.mobile-bar a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  transition: background 0.2s;
+}
 
-    /* Mobile CTA Highlight: Orange gradient pill for direct reservation */
-    .mobile-bar a.mob-cta {
-      background: linear-gradient(135deg, var(--sun-orange), #ea580c);
-      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
-    }
+/* Mobile CTA Highlight: Orange gradient pill for direct reservation */
+.mobile-bar a.mob-cta {
+  background: linear-gradient(135deg, var(--sun-orange), #ea580c);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+}
 
-    /* ==========================================================================
+/* ==========================================================================
        RESPONSIVE DESIGN BREAKPOINTS
        Adapts navigation, grid layouts, and visual hierarchy for tablets and phones.
        ========================================================================== */
-    /* Tablet & Medium Screens (< 992px) */
-    @media (max-width: 992px) {
+/* Tablet & Medium Screens (< 992px) */
+@media (max-width: 992px) {
 
-      /* Hides desktop navigation bar and reveals hamburger toggle */
-      .nav-menu {
-        display: none;
-      }
+  /* Hides desktop navigation bar and reveals hamburger toggle */
+  .nav-menu {
+    display: none;
+  }
 
-      .menu-toggle {
-        display: block;
-      }
+  .menu-toggle {
+    display: block;
+  }
 
-      /* Mobile dropdown navigation menu drawer */
-      .nav-menu.mobile-open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: #ffffff;
-        padding: 1.5rem;
-        border-bottom: 1px solid #e2e8f0;
-        box-shadow: var(--shadow-lg);
-        gap: 1.25rem;
-      }
+  /* Mobile dropdown navigation menu drawer */
+  .nav-menu.mobile-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    box-shadow: var(--shadow-lg);
+    gap: 1.25rem;
+  }
 
-      /* Collapses 2-column showcase rows into single stacked columns */
-      .gear-showcase-row,
-      .gear-showcase-row.reversed {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
-        text-align: center;
-      }
+  /* Collapses 2-column showcase rows into single stacked columns */
+  .gear-showcase-row,
+  .gear-showcase-row.reversed {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
 
-      .gear-showcase-row.reversed .gear-visual {
-        order: 1;
-      }
+  .gear-showcase-row.reversed .gear-visual {
+    order: 1;
+  }
 
-      .gear-showcase-row.reversed .gear-content {
-        order: 2;
-      }
+  .gear-showcase-row.reversed .gear-content {
+    order: 2;
+  }
 
-      .gear-content {
-        max-width: 640px;
-        margin-inline: auto;
-      }
+  .gear-content {
+    max-width: 640px;
+    margin-inline: auto;
+  }
 
-      .spec-pills {
-        justify-content: center;
-      }
+  .spec-pills {
+    justify-content: center;
+  }
 
-      .btn-wrap {
-        justify-content: center;
-      }
+  .btn-wrap {
+    justify-content: center;
+  }
 
-      /* Stacks villa card, booking box, location container, and footer into responsive columns */
-      .villa-card {
-        grid-template-columns: 1fr;
-      }
+  /* Stacks villa card, booking box, location container, and footer into responsive columns */
+  .villa-card {
+    grid-template-columns: 1fr;
+  }
 
-      .booking-box {
-        grid-template-columns: 1fr;
-      }
+  .booking-box {
+    grid-template-columns: 1fr;
+  }
 
-      .location-container {
-        grid-template-columns: 1fr;
-      }
+  .location-container {
+    grid-template-columns: 1fr;
+  }
 
-      .footer-main-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
+  .footer-main-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
 
-    /* Small Screens & Mobile Smartphones (< 640px) */
-    @media (max-width: 640px) {
-      .top-links {
-        display: none;
-      }
+/* Small Screens & Mobile Smartphones (< 640px) */
+@media (max-width: 640px) {
+  /* Reduce empty space on top and bottom of the kids image to ~30% */
+  .gear-showcase-row.centered-layout {
+    gap: 0;
+    margin-bottom: 1.5rem;
+  }
 
-      .top-bar-inner {
-        justify-content: center;
-      }
+  .gear-showcase-row.centered-layout .gear-content {
+    margin-bottom: 1.25rem;
+  }
 
-      /* On mobile phones: Swap 'Резервирај' button with language switcher */
-      .nav-cta .btn-nav {
-        display: none !important;
-      }
+  .slope-stream {
+    padding-bottom: 2rem;
+  }
 
-      .nav-cta .nav-lang-toggle {
-        display: inline-flex;
-        align-items: center;
-        background: rgba(15, 23, 42, 0.06);
-        border: 1px solid rgba(15, 23, 42, 0.1);
-        border-radius: var(--radius-pill);
-        padding: 3px 6px;
-        gap: 2px;
-      }
+  .top-links {
+    display: none;
+  }
 
-      .nav-cta .nav-lang-toggle .lang-btn {
-        padding: 3px 8px;
-        font-size: 0.75rem;
-        font-weight: 700;
-        color: var(--ink-muted);
-        border-radius: var(--radius-pill);
-        border: none;
-        background: transparent;
-        cursor: pointer;
-        transition: all 0.2s ease;
-      }
+  .top-bar-inner {
+    justify-content: center;
+  }
 
-      .nav-cta .nav-lang-toggle .lang-btn.active {
-        background: var(--glacier-cyan);
-        color: #ffffff;
-        box-shadow: 0 1px 4px rgba(14, 165, 233, 0.35);
-      }
+  /* On mobile phones: Swap 'Резервирај' button with language switcher */
+  .nav-cta .btn-nav {
+    display: none !important;
+  }
 
-      /* Reveals mobile floating sticky action bar at bottom of screen */
-      .mobile-bar {
-        display: flex;
-      }
+  .nav-cta .nav-lang-toggle {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.06);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: var(--radius-pill);
+    padding: 3px 6px;
+    gap: 2px;
+  }
 
-      .hero-section {
-        padding-top: 2rem;
-      }
+  .nav-cta .nav-lang-toggle .lang-btn {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--ink-muted);
+    border-radius: var(--radius-pill);
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
 
-      .category-pills {
-        grid-template-columns: 1fr;
-      }
+  .nav-cta .nav-lang-toggle .lang-btn.active {
+    background: var(--glacier-cyan);
+    color: #ffffff;
+    box-shadow: 0 1px 4px rgba(14, 165, 233, 0.35);
+  }
 
-      .villa-amenities {
-        grid-template-columns: 1fr;
-      }
+  /* Reveals mobile floating sticky action bar at bottom of screen */
+  .mobile-bar {
+    display: flex;
+  }
 
-      .footer-main-grid {
-        grid-template-columns: 1fr;
-      }
+  .hero-section {
+    padding-top: 2rem;
+  }
 
-      /* Hides complex floating badges on small screens for cleaner mobile UI */
-      .floating-card-badge {
-        display: none;
-      }
-    }
+  .category-pills {
+    grid-template-columns: 1fr;
+  }
+
+  .villa-amenities {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hides complex floating badges on small screens for cleaner mobile UI */
+  .floating-card-badge {
+    display: none;
+  }
+}

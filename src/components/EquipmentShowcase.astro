@@ -1,9 +1,19 @@
 ---
 // EquipmentShowcase.astro - Identical Gear Stream Rows
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
+const bgMountain = `${base}позадина.webp`;
 ---
 
 <div class="slope-stream" id="equipment">
+  <!-- Section Background with lowest z-index -->
+  <div
+    class="equipment-backdrop"
+    aria-hidden="true"
+    style={`background-image: url('${bgMountain}');`}
+  >
+  </div>
   <div class="stream-container">
     <div class="section-header-badge">
       <span class="section-eyebrow" data-i18n="sec_eyebrow">Нашата Опрема</span>
@@ -18,7 +28,10 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         <div class="image-stage-backdrop"></div>
         <div class="gear-image-wrapper">
           <picture>
-            <source srcset={`${base}images/section1-skier.webp`} type="image/webp" />
+            <source
+              srcset={`${base}images/section1-skier.webp`}
+              type="image/webp"
+            />
             <img
               src={`${base}images/section1-skier.png`}
               alt="Скијач на Пониква - Ски Надја"
@@ -217,9 +230,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
             class="btn-primary select-gear-btn"
             data-gear="Sledges and kids' gear"
           >
-            <span data-i18n="btn_rent_kids"
-              >Резервирај Детска Опрема / Санки</span
-            >
+            <span data-i18n="btn_rent_kids">Резервирај Детска Опрема</span>
           </a>
         </div>
       </div>
@@ -228,7 +239,10 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         <div class="image-stage-backdrop"></div>
         <div class="gear-image-wrapper">
           <picture>
-            <source srcset={`${base}images/section3-kids.webp`} type="image/webp" />
+            <source
+              srcset={`${base}images/section3-kids.webp`}
+              type="image/webp"
+            />
             <img
               src={`${base}images/section3-kids.png`}
               alt="Детски санки и опрема на Пониква - Ски Надја"

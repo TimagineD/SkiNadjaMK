@@ -55,7 +55,7 @@ export const i18nData: Record<Language, Record<string, string>> = {
     kids_spec_2: "Детски Скии (од 70 cm)",
     kids_spec_3: "Топли Скафандери (2 – 14 год.)",
     kids_spec_4: "Детски Шлемови со Сертификат",
-    btn_rent_kids: "Резервирај Детска Опрема / Санки",
+    btn_rent_kids: "Резервирај Детска Опрема",
     why_eyebrow: "Предности",
     why_title: "Зошто да изнајмите од Ски Надја?",
     feat1_t: "Директно на Патеката",
