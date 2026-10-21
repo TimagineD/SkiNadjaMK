@@ -1,41 +1,40 @@
 ---
 // LocationFaq.astro - Identical Location Guide & FAQ Accordion
+import { t } from "../data/i18n";
 ---
 <section class="location-section" id="location">
   <div class="location-container">
 
     <!-- Location Information -->
     <div class="location-info">
-      <span class="section-eyebrow" data-i18n="loc_eyebrow">Како до нас</span>
-      <h2 data-i18n="loc_title">Ски Центар Пониква</h2>
+      <span class="section-eyebrow" data-i18n="loc_eyebrow">{t.loc_eyebrow}</span>
+      <h2 data-i18n="loc_title">{t.loc_title}</h2>
       <p data-i18n="loc_desc">
-        Пониква е омилен планински и скијачки бисер на Осоговските Планини на 1,560 метри надморска височина. Нашиот
-        ски рентал е лоциран на самиот почеток на патеката, со брз и лесен пристап.
+        {t.loc_desc}
       </p>
 
       <div class="location-meta-list">
         <div class="location-meta-item">
           <div class="meta-icon">📍</div>
           <div class="meta-content">
-            <h4 data-i18n="loc_meta_address_t">Точна Локација</h4>
-            <p data-i18n="loc_meta_address_d">Пониква, Кочани, Македонија (Старт на скијачка патека)</p>
+            <h4 data-i18n="loc_meta_address_t">{t.loc_meta_address_t}</h4>
+            <p data-i18n="loc_meta_address_d">{t.loc_meta_address_d}</p>
           </div>
         </div>
 
         <div class="location-meta-item">
           <div class="meta-icon">⏰</div>
           <div class="meta-content">
-            <h4 data-i18n="loc_meta_hours_t">Работно Време</h4>
-            <p data-i18n="loc_meta_hours_d">Секој ден од Понеделник до Недела: 08:30 – 17:00</p>
+            <h4 data-i18n="loc_meta_hours_t">{t.loc_meta_hours_t}</h4>
+            <p data-i18n="loc_meta_hours_d">{t.loc_meta_hours_d}</p>
           </div>
         </div>
 
         <div class="location-meta-item">
           <div class="meta-icon">🚗</div>
           <div class="meta-content">
-            <h4 data-i18n="loc_meta_road_t">Пристапен Пат</h4>
-            <p data-i18n="loc_meta_road_d">Асфалтен пат од Кочани до Пониква (20 km), редовно расчистуван во зимска
-              сезона</p>
+            <h4 data-i18n="loc_meta_road_t">{t.loc_meta_road_t}</h4>
+            <p data-i18n="loc_meta_road_d">{t.loc_meta_road_d}</p>
           </div>
         </div>
       </div>
@@ -45,39 +44,34 @@
           <path
             d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
         </svg>
-        <span data-i18n="btn_maps">Отвори на Google Maps</span>
+        <span data-i18n="btn_maps">{t.btn_maps}</span>
       </a>
     </div>
 
     <!-- FAQ Accordion -->
     <div class="faq-card">
-      <span class="section-eyebrow" data-i18n="faq_eyebrow">Чести Прашања</span>
-      <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;" data-i18n="faq_title">Информации за Изнајмување</h2>
+      <span class="section-eyebrow" data-i18n="faq_eyebrow">{t.faq_eyebrow}</span>
+      <h2 style="font-size: 1.8rem; margin-bottom: 1.5rem;" data-i18n="faq_title">{t.faq_title}</h2>
 
       <div class="faq-list">
         <div class="faq-item open">
-          <div class="faq-question" data-i18n="faq_q1">Дали треба да резервирам однапред?</div>
-          <div class="faq-answer" data-i18n="faq_a1">Препорачуваме резервација преку WhatsApp или телефон особено за
-            време на викенди и празници, за да бидат подготвени вашите точни броеви на чизми и должини на скии.
-          </div>
+          <div class="faq-question" data-i18n="faq_q1">{t.faq_q1}</div>
+          <div class="faq-answer" data-i18n="faq_a1">{t.faq_a1}</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" data-i18n="faq_q2">Дали имате опрема за целосни почетници?</div>
-          <div class="faq-answer" data-i18n="faq_a2">Да! Имаме меки и стабилни скии за учење, како и заштитни
-            шлемови, заштитни одела и искусни совети за првото застанување на снег.</div>
+          <div class="faq-question" data-i18n="faq_q2">{t.faq_q2}</div>
+          <div class="faq-answer" data-i18n="faq_a2">{t.faq_a2}</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" data-i18n="faq_q3">Може ли да сменам број на чизми ако ми се тесни?</div>
-          <div class="faq-answer" data-i18n="faq_a3">Секако! Бидејќи сме на самиот старт на патеката, можете во
-            секој момент да свратите и веднаш бесплатно да го смените бројот за максимална удобност.</div>
+          <div class="faq-question" data-i18n="faq_q3">{t.faq_q3}</div>
+          <div class="faq-answer" data-i18n="faq_a3">{t.faq_a3}</div>
         </div>
 
         <div class="faq-item">
-          <div class="faq-question" data-i18n="faq_q4">Како да ја резервирам планинската вила?</div>
-          <div class="faq-answer" data-i18n="faq_a4">Јавете ни се или пишете ни директно на WhatsApp со посакуваните
-            датуми и број на гости, и веднаш ќе ви испратиме детални слики, слободни термини и услови.</div>
+          <div class="faq-question" data-i18n="faq_q4">{t.faq_q4}</div>
+          <div class="faq-answer" data-i18n="faq_a4">{t.faq_a4}</div>
         </div>
       </div>
     </div>

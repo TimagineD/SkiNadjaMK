@@ -1,5 +1,6 @@
 ---
 // BookingConcierge.astro - Identical Interactive Booking Concierge
+import { t } from "../data/i18n";
 ---
 <section class="booking-section" id="contact">
   <div class="booking-container">
@@ -7,70 +8,68 @@
 
       <!-- Left Column: Fast Contacts & Info -->
       <div class="booking-info">
-        <h2 data-i18n="book_box_title">Резервирајте Ја Вашата Опрема</h2>
+        <h2 data-i18n="book_box_title">{t.book_box_title}</h2>
         <p data-i18n="book_box_desc">
-          Изберете ја потребната опрема, внесете ги вашите информации и испратете директна порака на WhatsApp или
-          Viber за инстант потврда на вашите големини.
+          {t.book_box_desc}
         </p>
 
         <div class="direct-contacts">
           <a href="tel:+38970000000" class="contact-action-btn btn-phone" id="call-main">
-            <span>📞 <span data-i18n="btn_direct_call">Јавете се Веднаш</span></span>
+            <span>📞 <span data-i18n="btn_direct_call">{t.btn_direct_call}</span></span>
             <strong>+389 70 000 000</strong>
           </a>
 
           <a href="https://wa.me/38970000000" target="_blank" rel="noopener" class="contact-action-btn btn-wa"
             id="wa-main">
-            <span>💬 <span data-i18n="btn_direct_wa">Пишете ни на WhatsApp</span></span>
+            <span>💬 <span data-i18n="btn_direct_wa">{t.btn_direct_wa}</span></span>
             <strong>WhatsApp Chat →</strong>
           </a>
 
           <a href="viber://chat?number=%2B38970000000" class="contact-action-btn btn-viber" id="viber-main">
-            <span>🟣 <span data-i18n="btn_direct_viber">Пишете ни на Viber</span></span>
+            <span>🟣 <span data-i18n="btn_direct_viber">{t.btn_direct_viber}</span></span>
             <strong>Viber Chat →</strong>
           </a>
         </div>
 
         <div class="location-card-mini">
-          <strong data-i18n="loc_mini_t">📍 Локација на ски ренталот:</strong>
-          <span data-i18n="loc_mini_d">Пониква, Осоговски Планини (веднаш на почетокот на скијачката патека).
-            Работиме секој ден од 08:30 до 17:00 часот.</span>
+          <strong data-i18n="loc_mini_t">{t.loc_mini_t}</strong>
+          <span data-i18n="loc_mini_d">{t.loc_mini_d}</span>
         </div>
       </div>
 
       <!-- Right Column: Interactive WhatsApp Inquiry Form -->
       <form class="booking-form" id="inquiryForm">
         <div class="form-group">
-          <label for="userName" data-i18n="form_name">Вашето Име и Презиме</label>
+          <label for="userName" data-i18n="form_name">{t.form_name}</label>
           <input type="text" id="userName" name="name" class="form-control" placeholder="пр. Марко Петровски"
             required autocomplete="name">
         </div>
 
         <div class="form-group">
-          <label data-i18n="form_category">Што ви е потребно?</label>
+          <label data-i18n="form_category">{t.form_category}</label>
           <div class="category-pills">
             <label class="category-pill-label">
               <input type="radio" name="topic" value="Ski equipment" checked>
               <span class="pill-content">
-                <span>🎿</span> <span data-i18n="opt_ski">Ски Комплет</span>
+                <span>🎿</span> <span data-i18n="opt_ski">{t.opt_ski}</span>
               </span>
             </label>
             <label class="category-pill-label">
               <input type="radio" name="topic" value="Snowboard equipment">
               <span class="pill-content">
-                <span>🏂</span> <span data-i18n="opt_board">Сноуборд</span>
+                <span>🏂</span> <span data-i18n="opt_board">{t.opt_board}</span>
               </span>
             </label>
             <label class="category-pill-label">
               <input type="radio" name="topic" value="Sledges and kids' gear">
               <span class="pill-content">
-                <span>🛷</span> <span data-i18n="opt_kids">Санки / Деца</span>
+                <span>🛷</span> <span data-i18n="opt_kids">{t.opt_kids}</span>
               </span>
             </label>
             <label class="category-pill-label">
               <input type="radio" name="topic" value="Mountain villa">
               <span class="pill-content">
-                <span>🏡</span> <span data-i18n="opt_villa">Планинска Вила</span>
+                <span>🏡</span> <span data-i18n="opt_villa">{t.opt_villa}</span>
               </span>
             </label>
           </div>
@@ -79,12 +78,12 @@
         <!-- Date & People Counter -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
           <div class="form-group">
-            <label for="bookDate" data-i18n="form_date">Датум на пристигнување</label>
+            <label for="bookDate" data-i18n="form_date">{t.form_date}</label>
             <input type="date" id="bookDate" class="form-control">
           </div>
 
           <div class="form-group">
-            <label data-i18n="form_people">Број на лица</label>
+            <label data-i18n="form_people">{t.form_people}</label>
             <div class="counter-group">
               <button type="button" class="counter-btn" id="btnMinus">-</button>
               <span class="counter-value" id="peopleCount">2</span>
@@ -94,14 +93,14 @@
         </div>
 
         <div class="form-group">
-          <label for="userMsg" data-i18n="form_details">Големини / Чизми / Детали</label>
+          <label for="userMsg" data-i18n="form_details">{t.form_details}</label>
           <textarea id="userMsg" class="form-control" rows="3"
             placeholder="пр. Број на чевли 42 и 38, висина 180cm, за 2 дена"></textarea>
         </div>
 
         <!-- Live Message Preview -->
         <div class="preview-box">
-          <strong data-i18n="msg_preview_title">📋 Преглед на пораката за WhatsApp:</strong>
+          <strong data-i18n="msg_preview_title">{t.msg_preview_title}</strong>
           <div class="preview-text" id="liveMsgPreview">...</div>
         </div>
 
@@ -110,7 +109,7 @@
             <path
               d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2" />
           </svg>
-          <span data-i18n="form_submit_btn">Испрати на WhatsApp</span>
+          <span data-i18n="form_submit_btn">{t.form_submit_btn}</span>
         </button>
       </form>
 

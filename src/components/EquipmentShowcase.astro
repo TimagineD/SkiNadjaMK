@@ -1,5 +1,7 @@
 ---
 // EquipmentShowcase.astro - Identical Gear Stream Rows
+import { t } from "../data/i18n";
+
 const base = import.meta.env.BASE_URL.endsWith("/")
   ? import.meta.env.BASE_URL
   : `${import.meta.env.BASE_URL}/`;
@@ -16,10 +18,8 @@ const bgMountain = `${base}позадина.webp`;
   </div>
   <div class="stream-container">
     <div class="section-header-badge">
-      <span class="section-eyebrow" data-i18n="sec_eyebrow">Нашата Опрема</span>
-      <h2 class="section-main-title" data-i18n="sec_main_title">
-        Подготвени за Секој Снежен Спуст
-      </h2>
+      <span class="section-eyebrow" data-i18n="sec_eyebrow">{t.sec_eyebrow}</span>
+      <h2 class="section-main-title" data-i18n="sec_main_title">{t.sec_main_title}</h2>
     </div>
 
     <!-- 1. SKI EQUIPMENT SHOWCASE ROW: Professional carving & all-mountain ski sets -->
@@ -44,40 +44,34 @@ const bgMountain = `${base}позадина.webp`;
         <!-- Floating Spec Badges -->
         <div class="floating-card-badge badge-top-left">
           <span>⛷️</span>
-          <span data-i18n="ski_badge_1">Atomic & Head Carving</span>
+          <span data-i18n="ski_badge_1">{t.ski_badge_1}</span>
         </div>
         <div class="floating-card-badge badge-bottom-right">
           <span>🛡️</span>
-          <span data-i18n="ski_badge_2">Комплет со шлем и стапчиња</span>
+          <span data-i18n="ski_badge_2">{t.ski_badge_2}</span>
         </div>
       </div>
 
       <div class="gear-content">
-        <div class="gear-tag" data-i18n="ski_tag">Ски Комплети</div>
-        <h3 class="gear-title" data-i18n="ski_title">
-          Професионална Ски Опрема
-        </h3>
-        <p class="gear-desc" data-i18n="ski_desc">
-          Скии, стапчиња, удобни панцири, ракавици и заштитни одела — прецизно
-          нагодени на вашата висина, тежина и скијачко ниво. Ве чекаат
-          подготвени на стартот на патеката!
-        </p>
+        <div class="gear-tag" data-i18n="ski_tag">{t.ski_tag}</div>
+        <h3 class="gear-title" data-i18n="ski_title">{t.ski_title}</h3>
+        <p class="gear-desc" data-i18n="ski_desc">{t.ski_desc}</p>
         <div class="spec-pills">
           <span class="spec-pill"
             ><span>🎿</span>
-            <span data-i18n="ski_spec_1">Carving & All-Mountain</span></span
+            <span data-i18n="ski_spec_1">{t.ski_spec_1}</span></span
           >
           <span class="spec-pill"
             ><span>👢</span>
-            <span data-i18n="ski_spec_2">Броеви: 25 – 48</span></span
+            <span data-i18n="ski_spec_2">{t.ski_spec_2}</span></span
           >
           <span class="spec-pill"
             ><span>🪖</span>
-            <span data-i18n="ski_spec_3">Заштитни Шлемови</span></span
+            <span data-i18n="ski_spec_3">{t.ski_spec_3}</span></span
           >
           <span class="spec-pill"
             ><span>✨</span>
-            <span data-i18n="ski_spec_4">Свежо Восочени Скии</span></span
+            <span data-i18n="ski_spec_4">{t.ski_spec_4}</span></span
           >
         </div>
         <div class="btn-wrap">
@@ -86,7 +80,7 @@ const bgMountain = `${base}позадина.webp`;
             class="btn-primary select-gear-btn"
             data-gear="Ski equipment"
           >
-            <span data-i18n="btn_rent_ski">Резервирај Ски Комплет</span>
+            <span data-i18n="btn_rent_ski">{t.btn_rent_ski}</span>
           </a>
           <a href="tel:+38970000000" class="btn-secondary">
             <svg
@@ -101,7 +95,7 @@ const bgMountain = `${base}позадина.webp`;
                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
               ></path>
             </svg>
-            <span data-i18n="btn_call_us">Јави се</span>
+            <span data-i18n="btn_call_us">{t.btn_call_us}</span>
           </a>
         </div>
       </div>
@@ -129,41 +123,34 @@ const bgMountain = `${base}позадина.webp`;
         <!-- Floating Badges -->
         <div class="floating-card-badge badge-top-left">
           <span>🏂</span>
-          <span data-i18n="board_badge_1">Nitro & Burton Boards</span>
+          <span data-i18n="board_badge_1">{t.board_badge_1}</span>
         </div>
         <div class="floating-card-badge badge-bottom-right">
           <span>❄️</span>
-          <span data-i18n="board_badge_2">За почетници и напредни</span>
+          <span data-i18n="board_badge_2">{t.board_badge_2}</span>
         </div>
       </div>
 
       <div class="gear-content">
-        <div class="gear-tag" data-i18n="board_tag">Сноуборд Забава</div>
-        <h3 class="gear-title" data-i18n="board_title">
-          Сноуборд за Чист Адреналин
-        </h3>
-        <p class="gear-desc" data-i18n="board_desc">
-          Врвни даски за сноуборд, квалитетни меки чизми со брзо стегање,
-          заштитни шлемови и очила. Од вашите први свиоци до брзи карвинг
-          спустови на свеж снег!
-        </p>
+        <div class="gear-tag" data-i18n="board_tag">{t.board_tag}</div>
+        <h3 class="gear-title" data-i18n="board_title">{t.board_title}</h3>
+        <p class="gear-desc" data-i18n="board_desc">{t.board_desc}</p>
         <div class="spec-pills">
           <span class="spec-pill"
             ><span>🏂</span>
-            <span data-i18n="board_spec_1">Freeride & All-Mountain</span></span
+            <span data-i18n="board_spec_1">{t.board_spec_1}</span></span
           >
           <span class="spec-pill"
             ><span>🥾</span>
-            <span data-i18n="board_spec_2">Броеви: 35 – 47</span></span
+            <span data-i18n="board_spec_2">{t.board_spec_2}</span></span
           >
           <span class="spec-pill"
             ><span>🔄</span>
-            <span data-i18n="board_spec_3">Регулирање на аглите (Stance)</span
-            ></span
+            <span data-i18n="board_spec_3">{t.board_spec_3}</span></span
           >
           <span class="spec-pill"
             ><span>🧤</span>
-            <span data-i18n="board_spec_4">Топли Ракавици & Заштита</span></span
+            <span data-i18n="board_spec_4">{t.board_spec_4}</span></span
           >
         </div>
         <div class="btn-wrap">
@@ -172,7 +159,7 @@ const bgMountain = `${base}позадина.webp`;
             class="btn-primary select-gear-btn"
             data-gear="Snowboard equipment"
           >
-            <span data-i18n="btn_rent_board">Резервирај Сноуборд</span>
+            <span data-i18n="btn_rent_board">{t.btn_rent_board}</span>
           </a>
           <a
             href="https://wa.me/38970000000"
@@ -194,34 +181,25 @@ const bgMountain = `${base}позадина.webp`;
     <!-- 3. KIDS & FAMILY SLEDGES SHOWCASE ROW: Sledges, kids' skis, warm winter suits (Centered Layout) -->
     <div class="gear-showcase-row centered-layout">
       <div class="gear-content">
-        <div class="gear-tag" data-i18n="kids_tag">
-          За Семејства & Најмладите
-        </div>
-        <h3 class="gear-title" data-i18n="kids_title">
-          За Најмладите и Најхрабрите
-        </h3>
-        <p class="gear-desc" data-i18n="kids_desc">
-          Санки за еден или двајца, детска ски опрема во минијатурни големини и
-          топла заштитна облека за сигурна и насмеана семејна забава на снегот.
-        </p>
+        <div class="gear-tag" data-i18n="kids_tag">{t.kids_tag}</div>
+        <h3 class="gear-title" data-i18n="kids_title">{t.kids_title}</h3>
+        <p class="gear-desc" data-i18n="kids_desc">{t.kids_desc}</p>
         <div class="spec-pills">
           <span class="spec-pill"
             ><span>🛷</span>
-            <span data-i18n="kids_spec_1">Единечни и Двојни Санки</span></span
+            <span data-i18n="kids_spec_1">{t.kids_spec_1}</span></span
           >
           <span class="spec-pill"
             ><span>🎿</span>
-            <span data-i18n="kids_spec_2">Детски Скии (од 70 cm)</span></span
+            <span data-i18n="kids_spec_2">{t.kids_spec_2}</span></span
           >
           <span class="spec-pill"
             ><span>🧥</span>
-            <span data-i18n="kids_spec_3">Топли Скафандери (2 – 14 год.)</span
-            ></span
+            <span data-i18n="kids_spec_3">{t.kids_spec_3}</span></span
           >
           <span class="spec-pill"
             ><span>⛑️</span>
-            <span data-i18n="kids_spec_4">Детски Шлемови со Сертификат</span
-            ></span
+            <span data-i18n="kids_spec_4">{t.kids_spec_4}</span></span
           >
         </div>
         <div class="btn-wrap">
@@ -230,7 +208,7 @@ const bgMountain = `${base}позадина.webp`;
             class="btn-primary select-gear-btn"
             data-gear="Sledges and kids' gear"
           >
-            <span data-i18n="btn_rent_kids">Резервирај Детска Опрема</span>
+            <span data-i18n="btn_rent_kids">{t.btn_rent_kids}</span>
           </a>
         </div>
       </div>

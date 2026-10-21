@@ -1,12 +1,13 @@
 ---
 // Header.astro - Identical Announcement Bar & Frosted-Glass Navigation
+import { t } from "../data/i18n";
 ---
 <!-- ANNOUNCEMENT BAR: Real-time ski piste opening status, altitude, direct phone/WhatsApp links, snow toggle & language switcher -->
 <div class="top-bar">
   <div class="top-bar-inner">
     <div class="status-badge">
       <span class="pulse-dot"></span>
-      <span data-i18n="top_status">Пониква • 1,560m • Отворена Ски Патека 08:30 – 17:00</span>
+      <span data-i18n="top_status">{t.top_status}</span>
     </div>
     <div class="top-links">
       <a href="tel:+38970000000" id="top-phone">
@@ -49,19 +50,19 @@
       </div>
       <div class="brand-text">
         <h1>СКИ НАДЈА</h1>
-        <span data-i18n="brand_sub">ПОНИКВА • ОСОГОВО</span>
+        <span data-i18n="brand_sub">{t.brand_sub}</span>
       </div>
     </a>
 
     <!-- Primary Navigation Links -->
     <nav>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#equipment" data-i18n="nav_equipment">Опрема</a></li>
-        <li><a href="#advantages" data-i18n="nav_why">Зошто нас</a></li>
-        <li><a href="#pricing" data-i18n="nav_pricing">Ценовник</a></li>
-        <li><a href="#villa" data-i18n="nav_villa">Планинска Вила</a></li>
-        <li><a href="#location" data-i18n="nav_location">Локација</a></li>
-        <li><a href="#contact" data-i18n="nav_contact">Контакт</a></li>
+        <li><a href="#equipment" data-i18n="nav_equipment">{t.nav_equipment}</a></li>
+        <li><a href="#advantages" data-i18n="nav_why">{t.nav_why}</a></li>
+        <li><a href="#pricing" data-i18n="nav_pricing">{t.nav_pricing}</a></li>
+        <li><a href="#villa" data-i18n="nav_villa">{t.nav_villa}</a></li>
+        <li><a href="#location" data-i18n="nav_location">{t.nav_location}</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">{t.nav_contact}</a></li>
       </ul>
     </nav>
 
@@ -74,7 +75,7 @@
           <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
           <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
-        <span data-i18n="nav_book_btn">Резервирај</span>
+        <span data-i18n="nav_book_btn">{t.nav_book_btn}</span>
       </a>
 
       <!-- Mobile-Only Language Switcher (replaces button on phones) -->

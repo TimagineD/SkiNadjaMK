@@ -1,40 +1,37 @@
 ---
 // Advantages.astro - Identical Features Section
+import { t } from "../data/i18n";
 ---
 <section class="features-section" id="advantages">
   <div class="features-container">
     <div class="section-header-badge">
-      <span class="section-eyebrow" data-i18n="why_eyebrow">Предности</span>
-      <h2 class="section-main-title" data-i18n="why_title">Зошто да изнајмите од Ски Надја?</h2>
+      <span class="section-eyebrow" data-i18n="why_eyebrow">{t.why_eyebrow}</span>
+      <h2 class="section-main-title" data-i18n="why_title">{t.why_title}</h2>
     </div>
 
     <div class="features-grid">
       <div class="feature-card">
         <div class="feature-icon-box">📍</div>
-        <h3 data-i18n="feat1_t">Директно на Патеката</h3>
-        <p data-i18n="feat1_d">Нема потреба да носите тешка опрема со автомобил или низ паркинзи. Земете ги скиите и
-          веднаш стапнете на патеката.</p>
+        <h3 data-i18n="feat1_t">{t.feat1_t}</h3>
+        <p data-i18n="feat1_d">{t.feat1_d}</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">📐</div>
-        <h3 data-i18n="feat2_t">Прецизно Сервисирање</h3>
-        <p data-i18n="feat2_d">Везовите се нагодуваат строго според вашата тежина, висина и вештина според ISO DIN
-          безбедносни стандарди.</p>
+        <h3 data-i18n="feat2_t">{t.feat2_t}</h3>
+        <p data-i18n="feat2_d">{t.feat2_d}</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">🔥</div>
-        <h3 data-i18n="feat3_t">Греени Професионални Сушари</h3>
-        <p data-i18n="feat3_d">Обувките поминуваат низ озонска дезинфекција и сушење на топол воздух. Облекувате
-          сува и пријатна чизма секој пат.</p>
+        <h3 data-i18n="feat3_t">{t.feat3_t}</h3>
+        <p data-i18n="feat3_d">{t.feat3_d}</p>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">🏡</div>
-        <h3 data-i18n="feat4_t">Комплетен Зимски Пакет</h3>
-        <p data-i18n="feat4_d">Покрај ски и сноуборд опрема, нудиме и сместување во прекрасна планинска вила на
-          Пониква за целосен зимски одмор.</p>
+        <h3 data-i18n="feat4_t">{t.feat4_t}</h3>
+        <p data-i18n="feat4_d">{t.feat4_d}</p>
       </div>
     </div>
   </div>

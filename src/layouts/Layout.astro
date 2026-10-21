@@ -71,6 +71,9 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 
       function applyTranslations(lang: Language) {
         currentLang = lang;
+        try {
+          localStorage.setItem("preferred_lang", lang);
+        } catch (e) {}
         document.documentElement.lang = lang;
         const dict = i18nData[lang];
 
@@ -100,6 +103,16 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
       document.querySelectorAll(".btn-lang-en, #btn-en").forEach(el => {
         el.addEventListener("click", () => applyTranslations("en"));
       });
+
+      // Initialize with preferred language or default 'mk'
+      let initialLang: Language = "mk";
+      try {
+        const saved = localStorage.getItem("preferred_lang") as Language;
+        if (saved && i18nData[saved]) {
+          initialLang = saved;
+        }
+      } catch (e) {}
+      applyTranslations(initialLang);
 
       setupPhoneLinks(PHONE);
     </script>

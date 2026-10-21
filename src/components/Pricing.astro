@@ -1,22 +1,23 @@
 ---
 // Pricing.astro - Identical Pricing Packages Section
+import { t } from "../data/i18n";
 ---
 <section class="pricing-section" id="pricing">
   <div class="pricing-container">
     <div class="section-header-badge">
-      <span class="section-eyebrow" data-i18n="pricing_eyebrow">Ценовник</span>
-      <h2 class="section-main-title" data-i18n="pricing_title">Флексибилни Пакети за Секого</h2>
+      <span class="section-eyebrow" data-i18n="pricing_eyebrow">{t.pricing_eyebrow}</span>
+      <h2 class="section-main-title" data-i18n="pricing_title">{t.pricing_title}</h2>
     </div>
 
     <div class="pricing-grid">
       <!-- Card 1: Full Ski Set -->
       <div class="pricing-card featured">
-        <span class="pricing-badge" data-i18n="badge_popular">Најбарано</span>
+        <span class="pricing-badge" data-i18n="badge_popular">{t.badge_popular}</span>
         <div>
-          <h3 data-i18n="price_ski_t">Комплет Скии</h3>
-          <p class="pricing-tagline" data-i18n="price_ski_sub">Скии + Панцири + Стапчиња + Шлем</p>
+          <h3 data-i18n="price_ski_t">{t.price_ski_t}</h3>
+          <p class="pricing-tagline" data-i18n="price_ski_sub">{t.price_ski_sub}</p>
           <div class="pricing-rate">
-            <span data-i18n="price_from">од</span> 500 МКД <span data-i18n="price_per_day">/ ден</span>
+            <span data-i18n="price_from">{t.price_from}</span> 500 МКД <span data-i18n="price_per_day">{t.price_per_day}</span>
           </div>
           <ul class="pricing-features">
             <li>
@@ -25,7 +26,7 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_ski_f1">Carving скии за сите возрасти</span>
+              <span data-i18n="price_ski_f1">{t.price_ski_f1}</span>
             </li>
             <li>
               <svg fill="currentColor" viewBox="0 0 20 20">
@@ -33,7 +34,7 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_ski_f2">Греени панцири со прилагодување</span>
+              <span data-i18n="price_ski_f2">{t.price_ski_f2}</span>
             </li>
             <li>
               <svg fill="currentColor" viewBox="0 0 20 20">
@@ -41,7 +42,7 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_ski_f3">Безбедносен шлем и стапчиња</span>
+              <span data-i18n="price_ski_f3">{t.price_ski_f3}</span>
             </li>
             <li>
               <svg fill="currentColor" viewBox="0 0 20 20">
@@ -49,21 +50,21 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_ski_f4">Попуст за повеќедневни наеми</span>
+              <span data-i18n="price_ski_f4">{t.price_ski_f4}</span>
             </li>
           </ul>
         </div>
         <a href="#contact" class="btn-pricing select-gear-btn" data-gear="Ski equipment"
-          data-i18n="btn_choose_package">Избери Пакет</a>
+          data-i18n="btn_choose_package">{t.btn_choose_package}</a>
       </div>
 
       <!-- Card 2: Snowboard Set -->
       <div class="pricing-card">
         <div>
-          <h3 data-i18n="price_board_t">Сноуборд Комплет</h3>
-          <p class="pricing-tagline" data-i18n="price_board_sub">Даска + Меки Чизми + Шлем</p>
+          <h3 data-i18n="price_board_t">{t.price_board_t}</h3>
+          <p class="pricing-tagline" data-i18n="price_board_sub">{t.price_board_sub}</p>
           <div class="pricing-rate">
-            <span data-i18n="price_from">од</span> 600 МКД <span data-i18n="price_per_day">/ ден</span>
+            <span data-i18n="price_from">{t.price_from}</span> 600 МКД <span data-i18n="price_per_day">{t.price_per_day}</span>
           </div>
           <ul class="pricing-features">
             <li>
@@ -72,7 +73,7 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_board_f1">All-Mountain и Freeride даски</span>
+              <span data-i18n="price_board_f1">{t.price_board_f1}</span>
             </li>
             <li>
               <svg fill="currentColor" viewBox="0 0 20 20">
@@ -80,7 +81,7 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_board_f2">Удобни чизми со брзо затегнување</span>
+              <span data-i18n="price_board_f2">{t.price_board_f2}</span>
             </li>
             <li>
               <svg fill="currentColor" viewBox="0 0 20 20">
@@ -88,7 +89,7 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_board_f3">Нагодување на позиција (Goofy/Regular)</span>
+              <span data-i18n="price_board_f3">{t.price_board_f3}</span>
             </li>
             <li>
               <svg fill="currentColor" viewBox="0 0 20 20">
@@ -96,21 +97,21 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_board_f4">Вклучен шлем и заштита</span>
+              <span data-i18n="price_board_f4">{t.price_board_f4}</span>
             </li>
           </ul>
         </div>
         <a href="#contact" class="btn-pricing select-gear-btn" data-gear="Snowboard equipment"
-          data-i18n="btn_choose_package">Избери Пакет</a>
+          data-i18n="btn_choose_package">{t.btn_choose_package}</a>
       </div>
 
       <!-- Card 3: Sledges & Kids -->
       <div class="pricing-card">
         <div>
-          <h3 data-i18n="price_kids_t">Санки & Детска Опрема</h3>
-          <p class="pricing-tagline" data-i18n="price_kids_sub">За највеселите моменти на снегот</p>
+          <h3 data-i18n="price_kids_t">{t.price_kids_t}</h3>
+          <p class="pricing-tagline" data-i18n="price_kids_sub">{t.price_kids_sub}</p>
           <div class="pricing-rate">
-            <span data-i18n="price_from">од</span> 300 МКД <span data-i18n="price_per_day">/ ден</span>
+            <span data-i18n="price_from">{t.price_from}</span> 300 МКД <span data-i18n="price_per_day">{t.price_per_day}</span>
           </div>
           <ul class="pricing-features">
             <li>
@@ -119,7 +120,7 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_kids_f1">Здрави квалитетни санки (1 и 2 седишта)</span>
+              <span data-i18n="price_kids_f1">{t.price_kids_f1}</span>
             </li>
             <li>
               <svg fill="currentColor" viewBox="0 0 20 20">
@@ -127,7 +128,7 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_kids_f2">Детски ски комплети со лесни везови</span>
+              <span data-i18n="price_kids_f2">{t.price_kids_f2}</span>
             </li>
             <li>
               <svg fill="currentColor" viewBox="0 0 20 20">
@@ -135,7 +136,7 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_kids_f3">Заштитни топли шлемови</span>
+              <span data-i18n="price_kids_f3">{t.price_kids_f3}</span>
             </li>
             <li>
               <svg fill="currentColor" viewBox="0 0 20 20">
@@ -143,12 +144,12 @@
                   d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
                   clip-rule="evenodd" />
               </svg>
-              <span data-i18n="price_kids_f4">Топла заштитна облека (скафандери)</span>
+              <span data-i18n="price_kids_f4">{t.price_kids_f4}</span>
             </li>
           </ul>
         </div>
         <a href="#contact" class="btn-pricing select-gear-btn" data-gear="Sledges and kids' gear"
-          data-i18n="btn_choose_package">Избери Пакет</a>
+          data-i18n="btn_choose_package">{t.btn_choose_package}</a>
       </div>
     </div>
   </div>

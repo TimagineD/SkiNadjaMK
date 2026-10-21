@@ -29,7 +29,7 @@ export const i18nData: Record<Language, Record<string, string>> = {
     sec_main_title: "Подготвени за Секој Снежен Спуст",
     ski_tag: "Ски Комплети",
     ski_title: "Професионална Ски Опрема",
-    ski_desc: "Скии, стапчиња, удобни панцири, ракавици и заштитни одела — прецизно нагодени на вашата висина, тежина и скијачко ниво. Ве чекаат подготвени на стартот на патеката!",
+    ski_desc: "Скии, стапчиња, панцири, ракавици и заштитни одела — прилагодени на вашата висина, тежина и скијачко ниво. Ве чекаат подготвени на стартот на патеката!",
     ski_badge_1: "Atomic & Head Carving",
     ski_badge_2: "Комплет со шлем и стапчиња",
     ski_spec_1: "Carving & All-Mountain",
@@ -40,7 +40,7 @@ export const i18nData: Record<Language, Record<string, string>> = {
     btn_call_us: "Јави се",
     board_tag: "Сноуборд Забава",
     board_title: "Сноуборд за Чист Адреналин",
-    board_desc: "Врвни даски за сноуборд, квалитетни меки чизми со брзо стегање, заштитни шлемови и очила. Од вашите први свиоци до брзи карвинг спустови на свеж снег!",
+    board_desc: "Врвни даски за сноуборд, квалитетни чизми, заштитни шлемови и очила.",
     board_badge_1: "Nitro & Burton Boards",
     board_badge_2: "За почетници и напредни",
     board_spec_1: "Freeride & All-Mountain",
@@ -50,7 +50,7 @@ export const i18nData: Record<Language, Record<string, string>> = {
     btn_rent_board: "Резервирај Сноуборд",
     kids_tag: "За Семејства & Најмладите",
     kids_title: "За Најмладите и Најхрабрите",
-    kids_desc: "Санки за еден или двајца, детска ски опрема во минијатурни големини и топла заштитна облека за сигурна и насмеана семејна забава на снегот.",
+    kids_desc: "Санки, детска ски опрема и топла заштитна облека за сигурна забава на снегот.",
     kids_spec_1: "Единечни и Двојни Санки",
     kids_spec_2: "Детски Скии (од 70 cm)",
     kids_spec_3: "Топли Скафандери (2 – 14 год.)",
@@ -306,3 +306,5 @@ export const i18nData: Record<Language, Record<string, string>> = {
     mob_book: "Book"
   }
 };
+
+export const t = i18nData.mk;

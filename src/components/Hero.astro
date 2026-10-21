@@ -1,5 +1,6 @@
 ---
 // Hero.astro - Identical Alpine Hero Section
+import { t } from "../data/i18n";
 ---
 <section class="hero-section">
   <!-- Decorative Backdrop Artwork & Ambient Radial Sunrise Glow -->
@@ -10,19 +11,18 @@
     <!-- Location Value Badge -->
     <div class="hero-pill">
       <span>🏔️</span>
-      <span data-i18n="hero_pill">Опрема директно на скијачката патека Пониква</span>
+      <span data-i18n="hero_pill">{t.hero_pill}</span>
     </div>
 
     <!-- Main Fluid Heading -->
     <h2 class="hero-title">
-      <span data-i18n="hero_title_1">Вашата незаборавна</span><br>
-      <span class="gradient-text" data-i18n="hero_title_2">зимска авантура</span>
+      <span data-i18n="hero_title_1">{t.hero_title_1}</span><br>
+      <span class="gradient-text" data-i18n="hero_title_2">{t.hero_title_2}</span>
     </h2>
 
     <!-- Descriptive Subtitle -->
     <p class="hero-subtitle" data-i18n="hero_desc">
-      Врвна ски и сноуборд опрема, дезинфицирана и прецизно прилагодена на вашата висина и број. Без носење тежок
-      багаж — земете ја опремата веднаш на стартот на патеката!
+      {t.hero_desc}
     </p>
 
     <!-- Primary & Secondary Conversion CTA Buttons -->
@@ -31,13 +31,13 @@
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7" />
         </svg>
-        <span data-i18n="hero_cta_book">Резервирај Опрема</span>
+        <span data-i18n="hero_cta_book">{t.hero_cta_book}</span>
       </a>
       <a href="#equipment" class="btn-secondary">
         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path d="m6 9 6 6 6-6" />
         </svg>
-        <span data-i18n="hero_cta_explore">Погледни ја Опремата</span>
+        <span data-i18n="hero_cta_explore">{t.hero_cta_explore}</span>
       </a>
     </div>
 
@@ -46,29 +46,29 @@
       <div class="highlight-card">
         <div class="highlight-icon">📍</div>
         <div class="highlight-info">
-          <h4 data-i18n="hl1_t">На самиот старт</h4>
-          <p data-i18n="hl1_d">Директно до лифтот, 0 метри носење</p>
+          <h4 data-i18n="hl1_t">{t.hl1_t}</h4>
+          <p data-i18n="hl1_d">{t.hl1_d}</p>
         </div>
       </div>
       <div class="highlight-card">
         <div class="highlight-icon">⚡</div>
         <div class="highlight-info">
-          <h4 data-i18n="hl2_t">Брзо прилагодување</h4>
-          <p data-i18n="hl2_d">Чизми, везови и шлемови за 5 минути</p>
+          <h4 data-i18n="hl2_t">{t.hl2_t}</h4>
+          <p data-i18n="hl2_d">{t.hl2_d}</p>
         </div>
       </div>
       <div class="highlight-card">
         <div class="highlight-icon">🔥</div>
         <div class="highlight-info">
-          <h4 data-i18n="hl3_t">Греени & Суви Чизми</h4>
-          <p data-i18n="hl3_d">Секој пар е сув, топол и дезинфициран</p>
+          <h4 data-i18n="hl3_t">{t.hl3_t}</h4>
+          <p data-i18n="hl3_d">{t.hl3_d}</p>
         </div>
       </div>
       <div class="highlight-card">
         <div class="highlight-icon">👨‍👩‍👧‍👦</div>
         <div class="highlight-info">
-          <h4 data-i18n="hl4_t">За Сите Возрасти</h4>
-          <p data-i18n="hl4_d">Скии, бордови, санки и опрема за деца</p>
+          <h4 data-i18n="hl4_t">{t.hl4_t}</h4>
+          <p data-i18n="hl4_d">{t.hl4_d}</p>
         </div>
       </div>
     </div>

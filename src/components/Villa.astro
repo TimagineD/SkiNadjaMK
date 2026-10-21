@@ -1,5 +1,7 @@
 ---
 // Villa.astro - Identical Chalet Accommodation Section
+import { t } from "../data/i18n";
+
 const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 <section class="villa-section" id="villa">
@@ -16,12 +18,10 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
 
       <div class="villa-content">
         <div class="gear-tag" style="background: rgba(249, 115, 22, 0.2); color: var(--sun-amber);"
-          data-i18n="villa_tag">Планинско Сместување</div>
-        <h2 data-i18n="villa_title">Вила Надја Пониква</h2>
+          data-i18n="villa_tag">{t.villa_tag}</div>
+        <h2 data-i18n="villa_title">{t.villa_title}</h2>
         <p data-i18n="villa_desc">
-          Изнајмуваме и автентична, топла планинска вила на Пониква, лоцирана во близина на скијачката патека.
-          Совршена за семејства и друштва што сакаат вистински планински мир, камин и прекрасен поглед на снежните
-          борови шуми.
+          {t.villa_desc}
         </p>
 
         <div class="villa-amenities">
@@ -30,7 +30,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
               <path
                 d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
             </svg>
-            <span data-i18n="v_am1">Капацитет: 6 – 10 гости</span>
+            <span data-i18n="v_am1">{t.v_am1}</span>
           </div>
           <div class="amenity-item">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
@@ -38,7 +38,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                 d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.316.492-.533 1.035-.722 1.526-.209.545-.409 1.059-.668 1.491a6.002 6.002 0 00-1.744 3.931A6 6 0 1018 10a5.986 5.986 0 00-1.295-3.754 8.04 8.04 0 00-.783-.935c-.443-.448-.962-.835-1.527-1.758zm-2.053 5.43c.123-.332.257-.68.406-1.038.163-.393.344-.79.544-1.177.307.382.59.803.828 1.259.277.53.486 1.107.616 1.705a4 4 0 11-4.72-2.31c.42.5.87.94 1.326 1.56z"
                 clip-rule="evenodd" />
             </svg>
-            <span data-i18n="v_am2">Камин на дрва & Парно</span>
+            <span data-i18n="v_am2">{t.v_am2}</span>
           </div>
           <div class="amenity-item">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
@@ -46,7 +46,7 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                 d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                 clip-rule="evenodd" />
             </svg>
-            <span data-i18n="v_am3">Комплетна кујна & Скара</span>
+            <span data-i18n="v_am3">{t.v_am3}</span>
           </div>
           <div class="amenity-item">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 20 20">
@@ -54,18 +54,18 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
                 d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
                 clip-rule="evenodd" />
             </svg>
-            <span data-i18n="v_am4">Директен пристап и паркинг</span>
+            <span data-i18n="v_am4">{t.v_am4}</span>
           </div>
         </div>
 
         <div class="btn-wrap">
           <a href="#contact" class="btn-primary select-gear-btn" data-gear="Mountain villa"
             style="background: linear-gradient(135deg, var(--sun-orange), #ea580c);">
-            <span data-i18n="btn_inquire_villa">Прашај за Слободни Термини</span>
+            <span data-i18n="btn_inquire_villa">{t.btn_inquire_villa}</span>
           </a>
           <a href="tel:+38970000000" class="btn-secondary"
             style="background: rgba(255,255,255,0.1); color: #fff; border-color: rgba(255,255,255,0.3);">
-            <span data-i18n="btn_call_direct">Директен Повик</span>
+            <span data-i18n="btn_call_direct">{t.btn_call_direct}</span>
           </a>
         </div>
       </div>
