@@ -1,23 +1,29 @@
 ---
 // Footer.astro - Identical Alpine Footer
 import { t } from "../data/i18n";
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-main-grid">
 
       <div class="footer-brand">
-        <div class="brand" style="margin-bottom: 1rem;">
-          <div class="brand-mark" style="width: 36px; height: 36px;">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-              <path d="m8 3 4 8 5-5 5 15H2L8 3z" />
-            </svg>
-          </div>
+        <a href="#" class="brand footer-brand-link" style="margin-bottom: 1rem;" aria-label="Ски Надја Пониква">
+          <img
+            src={`${base}LOGO.svg`}
+            alt="Ски Надја Пониква Лого"
+            class="brand-logo footer-logo"
+            width="44"
+            height="46"
+            loading="lazy"
+            decoding="async"
+          />
           <div class="brand-text">
             <h1 style="color: #ffffff; font-size: 1.15rem;">СКИ НАДЈА</h1>
             <span style="font-size: 0.65rem;">ПОНИКВА</span>
           </div>
-        </div>
+        </a>
         <p data-i18n="footer_brand_desc">
           {t.footer_brand_desc}
         </p>
