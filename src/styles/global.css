@@ -373,6 +373,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 /* Brand Identity Link: Combines the mountain graphic mark and business typography */
@@ -381,6 +382,46 @@ img {
   align-items: center;
   gap: 12px;
   text-decoration: none;
+}
+.brand-left {
+  z-index: 2;
+}
+
+/* Centered Prominent Emblem Logo */
+.nav-center-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  text-decoration: none;
+}
+.brand-logo-center {
+  height: 74px;
+  width: auto;
+  aspect-ratio: 3516 / 3685;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 16px rgba(23, 71, 158, 0.35)) drop-shadow(0 0 10px rgba(249, 115, 22, 0.3));
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.28s ease;
+}
+.site-nav.scrolled .brand-logo-center {
+  height: 58px;
+}
+.nav-center-logo:hover .brand-logo-center {
+  transform: scale(1.08) rotate(-2deg);
+  filter: drop-shadow(0 6px 20px rgba(23, 71, 158, 0.45)) drop-shadow(0 0 16px rgba(249, 115, 22, 0.45));
+}
+
+/* Right Navigation & CTA Group */
+.nav-right-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  z-index: 2;
 }
 
 /* Brand Logo: Official Ski Nadja vector emblem with smooth hover micro-interaction */
@@ -2048,6 +2089,15 @@ img {
   /* Scaled logo sizing for compact mobile nav */
   .brand-logo {
     height: 40px;
+  }
+  .brand-logo-center {
+    height: 50px;
+  }
+  .site-nav.scrolled .brand-logo-center {
+    height: 42px;
+  }
+  .nav-right-group {
+    gap: 0.75rem;
   }
 
   .hero-section {
