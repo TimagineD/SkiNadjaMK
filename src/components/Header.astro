@@ -38,61 +38,67 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
   </div>
 </div>
 
-<!-- MAIN NAVIGATION HEADER: Sticky frosted-glass navbar with brand logo, section anchors, booking CTA, and mobile hamburger drawer -->
+<!-- MAIN NAVIGATION HEADER: Sticky frosted-glass navbar with brand text on left, centered prominent logo, right navigation & CTA -->
 <header class="site-nav" id="navbar">
   <div class="nav-container">
-    <!-- Brand Logo Component -->
-    <a href="#" class="brand" aria-label="Ски Надја Пониква">
-      <img
-        src={`${base}LOGO.svg`}
-        alt="Ски Надја Пониква Лого"
-        class="brand-logo"
-        width="48"
-        height="50"
-        loading="eager"
-        decoding="async"
-      />
+    <!-- Left: Brand Text -->
+    <a href="#" class="brand brand-left" aria-label="Ски Надја Пониква">
       <div class="brand-text">
         <h1>СКИ НАДЈА</h1>
         <span data-i18n="brand_sub">{t.brand_sub}</span>
       </div>
     </a>
 
-    <!-- Primary Navigation Links -->
-    <nav>
-      <ul class="nav-menu" id="navMenu">
-        <li><a href="#equipment" data-i18n="nav_equipment">{t.nav_equipment}</a></li>
-        <li><a href="#advantages" data-i18n="nav_why">{t.nav_why}</a></li>
-        <!-- <li><a href="#pricing" data-i18n="nav_pricing">{t.nav_pricing}</a></li> -->
-        <li><a href="#villa" data-i18n="nav_villa">{t.nav_villa}</a></li>
-        <li><a href="#location" data-i18n="nav_location">{t.nav_location}</a></li>
-        <li><a href="#contact" data-i18n="nav_contact">{t.nav_contact}</a></li>
-      </ul>
-    </nav>
+    <!-- Center: Prominent Emblem Logo -->
+    <a href="#" class="nav-center-logo" aria-label="Ски Надја Пониква">
+      <img
+        src={`${base}LOGO.svg`}
+        alt="Ски Надја Пониква Лого"
+        class="brand-logo-center"
+        width="76"
+        height="80"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
 
-    <!-- Header Action & Mobile Menu Toggle -->
-    <div class="nav-cta">
-      <a href="#contact" class="btn-nav">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-          <circle cx="9" cy="7" r="4" />
-          <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-        </svg>
-        <span data-i18n="nav_book_btn">{t.nav_book_btn}</span>
-      </a>
+    <!-- Right: Navigation Links & Actions -->
+    <div class="nav-right-group">
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#equipment" data-i18n="nav_equipment">{t.nav_equipment}</a></li>
+          <li><a href="#advantages" data-i18n="nav_why">{t.nav_why}</a></li>
+          <!-- <li><a href="#pricing" data-i18n="nav_pricing">{t.nav_pricing}</a></li> -->
+          <li><a href="#villa" data-i18n="nav_villa">{t.nav_villa}</a></li>
+          <li><a href="#location" data-i18n="nav_location">{t.nav_location}</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">{t.nav_contact}</a></li>
+        </ul>
+      </nav>
 
-      <!-- Mobile-Only Language Switcher (replaces button on phones) -->
-      <div class="lang-toggle nav-lang-toggle">
-        <button class="lang-btn btn-lang-mk active" type="button">MK</button>
-        <button class="lang-btn btn-lang-en" type="button">EN</button>
+      <!-- Header Action & Mobile Menu Toggle -->
+      <div class="nav-cta">
+        <a href="#contact" class="btn-nav">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span data-i18n="nav_book_btn">{t.nav_book_btn}</span>
+        </a>
+
+        <!-- Mobile-Only Language Switcher (replaces button on phones) -->
+        <div class="lang-toggle nav-lang-toggle">
+          <button class="lang-btn btn-lang-mk active" type="button">MK</button>
+          <button class="lang-btn btn-lang-en" type="button">EN</button>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle Navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </div>
 </header>
