@@ -1,12 +1,27 @@
 ---
 // Hero.astro - Identical Alpine Hero Section
 import { t } from "../data/i18n";
+
+const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 ---
 <section class="hero-section">
   <!-- Decorative Backdrop Artwork & Ambient Radial Sunrise Glow -->
   <div class="hero-backdrop"></div>
   <div class="hero-glow"></div>
   <div class="hero-container">
+
+    <!-- Prominent Centered Emblem Logo below header/navigation bar (40% larger) -->
+    <div class="hero-logo-badge">
+      <img
+        src={`${base}LOGO.svg`}
+        alt="Ски Надја Пониква"
+        class="hero-emblem-logo"
+        width="112"
+        height="118"
+        loading="eager"
+        decoding="async"
+      />
+    </div>
 
     <!-- Location Value Badge -->
     <div class="hero-pill">
