@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: 'Roboto Slab', serif;
+  --font-serif: 'Roboto Slab', serif;
+}
+
 /* ==========================================================================
        MODERN DESIGN TOKENS & SYSTEM
        Defines CSS custom properties (variables) for consistent colors, elevations,
@@ -52,8 +57,8 @@
   --shadow-orange: 0 10px 25px rgba(249, 115, 22, 0.35);
 
   /* Typography Font Families */
-  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Roboto Slab', serif;
+  --font-body: 'Roboto Slab', serif;
 
   /* Global Layout & Smooth Scrolling Behavior */
   box-sizing: border-box;
@@ -95,11 +100,14 @@ body {
   color: var(--snow-white);
 }
 
-/* Headings Defaults: Applies geometric display font ('Outfit') and tight letter spacing */
+/* Headings Defaults: Applies 'Roboto Slab' and tight letter spacing */
 h1,
 h2,
 h3,
-h4 {
+
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   margin: 0;
   color: var(--deep-navy);
@@ -377,6 +385,7 @@ img {
   position: relative;
   transition: padding var(--transition-normal);
 }
+
 .site-nav.scrolled .nav-container {
   padding: 0.5rem 1.5rem;
 }
@@ -388,6 +397,7 @@ img {
   gap: 12px;
   text-decoration: none;
 }
+
 .brand-left {
   justify-self: start;
 }
@@ -414,6 +424,7 @@ img {
   justify-content: center;
   margin-bottom: 1.5rem;
 }
+
 .hero-emblem-logo {
   height: 106px;
   width: auto;
@@ -423,6 +434,7 @@ img {
   filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 16px rgb(255, 255, 255));
   transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
 }
+
 .hero-emblem-logo:hover {
   transform: scale(1.08) rotate(-2deg);
   filter: drop-shadow(0 8px 26px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 22px rgb(255, 255, 255));
@@ -1667,6 +1679,7 @@ img {
 
 .preview-text {
   font-family: monospace;
+  font-family: inherit;
   white-space: pre-line;
   color: #334155;
 }
@@ -2028,6 +2041,7 @@ img {
 
 /* Small Screens & Mobile Smartphones (< 640px) */
 @media (max-width: 640px) {
+
   /* Balanced mobile spacing for Kids Equipment row & adjacent sections */
   .slope-stream {
     padding: 2.5rem 0 1rem;
@@ -2096,9 +2110,11 @@ img {
   .brand-logo {
     height: 40px;
   }
+
   .hero-emblem-logo {
     height: 80px;
   }
+
   .hero-logo-badge {
     margin-bottom: 1rem;
   }

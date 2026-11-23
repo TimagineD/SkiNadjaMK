@@ -9,18 +9,24 @@ interface Props {
 
 const {
   title = "СКИ НАДЈА – Пониква | Изнајмување Ски & Сноуборд Опрема",
-  description = "Премиум ски и сноуборд опрема на самиот старт на скијачката патека на Пониква. Скии, бордови, санки, топла опрема и планинска вила."
+  description = "Премиум ски и сноуборд опрема на самиот старт на скијачката патека на Пониква. Скии, бордови, санки, топла опрема и планинска вила.",
 } = Astro.props;
 
-const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const base = import.meta.env.BASE_URL.endsWith("/")
+  ? import.meta.env.BASE_URL
+  : `${import.meta.env.BASE_URL}/`;
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="mk" style={`--bg-mountain: url('${base}позадина.webp');`}>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
     <meta name="color-scheme" content="light" />
-    
+
     <title>{title}</title>
     <meta name="description" content={description} />
 
@@ -33,11 +39,18 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Favicon & Icons -->
     <link rel="icon" type="image/svg+xml" href={`${base}LOGO.svg`} />
-    <link rel="alternate icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+    <link
+      rel="alternate icon"
+      type="image/svg+xml"
+      href={`${base}favicon.svg`}
+    />
     <link rel="apple-touch-icon" href={`${base}LOGO.svg`} />
   </head>
   <body>
@@ -47,24 +60,24 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
     <script>
       import { i18nData, type Language } from "../data/i18n";
 
-      const PHONE = "38970000000";
+      const PHONE = "38978667738";
 
       function setupPhoneLinks(number: string) {
         const telHref = "tel:+" + number;
         const waHref = "https://wa.me/" + number;
         const viberHref = "viber://chat?number=%2B" + number;
 
-        ["top-phone", "call-main", "foot-phone", "mob-call"].forEach(id => {
+        ["top-phone", "call-main", "foot-phone", "mob-call"].forEach((id) => {
           const el = document.getElementById(id) as HTMLAnchorElement | null;
           if (el) el.href = telHref;
         });
 
-        ["top-wa", "wa-main", "foot-wa", "mob-wa"].forEach(id => {
+        ["top-wa", "wa-main", "foot-wa", "mob-wa"].forEach((id) => {
           const el = document.getElementById(id) as HTMLAnchorElement | null;
           if (el) el.href = waHref;
         });
 
-        ["viber-main", "foot-viber"].forEach(id => {
+        ["viber-main", "foot-viber"].forEach((id) => {
           const el = document.getElementById(id) as HTMLAnchorElement | null;
           if (el) el.href = viberHref;
         });
@@ -80,17 +93,17 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         document.documentElement.lang = lang;
         const dict = i18nData[lang];
 
-        document.querySelectorAll("[data-i18n]").forEach(el => {
+        document.querySelectorAll("[data-i18n]").forEach((el) => {
           const key = el.getAttribute("data-i18n");
           if (key && dict[key]) {
             el.textContent = dict[key];
           }
         });
 
-        document.querySelectorAll(".btn-lang-mk, #btn-mk").forEach(el => {
+        document.querySelectorAll(".btn-lang-mk, #btn-mk").forEach((el) => {
           el.classList.toggle("active", lang === "mk");
         });
-        document.querySelectorAll(".btn-lang-en, #btn-en").forEach(el => {
+        document.querySelectorAll(".btn-lang-en, #btn-en").forEach((el) => {
           el.classList.toggle("active", lang === "en");
         });
 
@@ -100,10 +113,10 @@ const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL :
         }
       }
 
-      document.querySelectorAll(".btn-lang-mk, #btn-mk").forEach(el => {
+      document.querySelectorAll(".btn-lang-mk, #btn-mk").forEach((el) => {
         el.addEventListener("click", () => applyTranslations("mk"));
       });
-      document.querySelectorAll(".btn-lang-en, #btn-en").forEach(el => {
+      document.querySelectorAll(".btn-lang-en, #btn-en").forEach((el) => {
         el.addEventListener("click", () => applyTranslations("en"));
       });
 
