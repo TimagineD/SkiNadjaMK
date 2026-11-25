@@ -417,27 +417,20 @@ img {
   gap: 1.25rem;
 }
 
-/* Hero Emblem Logo: Centered below navigation bar (40% larger) */
+/* Hero Emblem Logo: Centered below navigation bar */
 .hero-logo-badge {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero-emblem-logo {
-  height: 106px;
+  height: 160px;
   width: auto;
   aspect-ratio: 3516 / 3685;
   object-fit: contain;
   display: block;
-  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 16px rgb(255, 255, 255));
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
-}
-
-.hero-emblem-logo:hover {
-  transform: scale(1.08) rotate(-2deg);
-  filter: drop-shadow(0 8px 26px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 22px rgb(255, 255, 255));
 }
 
 /* Brand Logo: Official Ski Nadja vector emblem with smooth hover micro-interaction */
@@ -616,7 +609,7 @@ img {
 .hero-section {
   position: relative;
   overflow: hidden;
-  padding: clamp(1rem, 6vw, 2rem) 1.5rem clamp(3rem, 7vw, 6rem);
+  padding: clamp(0.5rem, 6vw, 1rem) 1.5rem clamp(3rem, 7vw, 6rem);
   background: linear-gradient(180deg, rgba(235, 244, 255, 0.8) 0%, rgba(240, 247, 255, 0.4) 100%);
   border-bottom: 1px solid rgba(226, 232, 240, 0.6);
 }
@@ -2112,11 +2105,11 @@ img {
   }
 
   .hero-emblem-logo {
-    height: 80px;
+    height: 180px;
   }
 
   .hero-logo-badge {
-    margin-bottom: 1rem;
+    margin-bottom: 0rem;
   }
 
   .hero-section {
